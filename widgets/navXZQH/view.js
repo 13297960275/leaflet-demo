@@ -17,27 +17,27 @@ function initWidgetView(t) {
 }
 
 function centerAtRegion(t, e) {
-  
   var sl, el;
-  sl = e.lastIndexOf("/"); 
-  - 1 != sl ? (el = e.substring(sl + 1)) : (el = e)
+  sl = e.lastIndexOf("/"); -
+  1 != sl ? (el = e.substring(sl + 1)) : (el = e)
   console.log(el)
   var i, n;
   if ("0000" == t.substring(2)) {
-    (i = "geoJson/china-main-city/china.json", 
-    n = t.substring(0, 2))
+    (i = "chinaGeoJson/china.json",
+      n = t.substring(0, 2))
   } else if ("00" == t.substring(4)) {
-    (i = "geoJson/china-main-city/" + t + ".json", 
-    n = t.substring(0, 4))
+    (i = "chinaGeoJson/geometryProvince/" + t.substring(0, 2) + ".json",
+      n = t.substring(0, 4))
   } else {
-    (i = "geoJson/china-main-city/" + t.substring(0, 4) + "00.json", 
-    n = t, 
-    $("#con_wdx_1").hide())
+    (i = "chinaGeoJson/geometryCouties/" + t.substring(0, 4) + "00.json",
+      n = t,
+      $("#con_wdx_1").hide())
   }
   $.getJSON(i, function (t) {
     if (thisWidget.isActivate)
       for (var e = t.features.length, i = 0; i < e; i++)
-        if (t.features[i].properties.name.indexOf(el) > -1 || el.indexOf(t.features[i].properties.name) > -1) {
+        if (t.features[i].properties.id == n) {
+        // if (t.features[i].properties.name.indexOf(el) > -1 || el.indexOf(t.features[i].properties.name) > -1) {
           thisWidget.showRegionExtent(t.features[i]);
           break
         }
