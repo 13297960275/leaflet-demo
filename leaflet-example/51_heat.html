@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>Leaflet地图</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="../lib/include-lib.js" libpath="../lib/" include="jquery,layer,haoutil,leaflet-mars,esri-leaflet">
+  </script>
+</head>
+
+<body>
+  <div id="map" class="map"></div>
+  <script>
+    var map;
+
+    function initMap() {
+      var a = haoutil.system.getRequestByName("config", "config/gcj.json");
+      L.mars.createMap({
+        id: "map",
+        url: a,
+        success: function (a, t) {
+          map = a, initWork()
+        }
+      })
+    }
+
+    function initWork() {
+      $.getJSON("../data/apidemo/heat.json", function (a) {
+        if (0 == a.Code) {
+          for (var t = a.Data, e = [], n = 0; n < t.length; n++) {
+            var i = t[n];
+            e.push([i.Y, i.X, i.Count])
+          }
+          addHeatLayer(e)
+        } else haoutil.msg(a.Msg)
+      })
+    }
+
+    function addHeatLayer(a) {
+      L.heatLayer(a, {
+        minOpacity: .3,
+        gradient: {
+          .4: "blue",
+          .6: "cyan",
+          .7: "lime",
+          .8: "yellow",
+          1: "red"
+        }
+      }).addTo(map);
+      map.fitBounds(a)
+    }
+    $(document).ready(function () {
+      initMap()
+    })
+  </script>
+</body>
+
+</html>

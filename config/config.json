@@ -581,8 +581,8 @@
   },
 
   "widget": {
-    "debugger": false,
-    "version": "20180418",
+    "debugger": true,
+    "version": "",
     "defaultOptions": {
       "windowOptions": {
         "skin": "animation-fade",
@@ -695,7 +695,6 @@
       }
     ],
     "widgets": [
-
       {
         "name": "模板",
         "type": "group",
