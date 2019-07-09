@@ -1,0 +1,1 @@
+L.widget.bindClass(L.widget.BaseWidget.extend({map:null,options:{view:{type:"window",url:"view.html",windowOptions:{width:250,height:300}}},create:function(){},viewWindow:null,winCreateOK:function(i,t){this.viewWindow=t},activate:function(){this.viewWindow.testIframeFun()},disable:function(){this.viewWindow=null},testFun:function(){toastr.info("我是index页面中widget定义的测试方法")}}));

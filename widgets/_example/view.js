@@ -1,0 +1,1 @@
+var thisWidget;function initWidgetView(t){(thisWidget=t).testFun()}function testIframeFun(){toastr.info("我是弹窗中的方法")}

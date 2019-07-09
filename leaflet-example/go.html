@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+  <meta name="author" content="">
+  <meta name="renderer" content="webkit">
+  <link rel="icon" type="image/png" href="img/favicon/favicon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="img/favicon/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="">
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon.png">
+  <meta name="msapplication-TileImage" content="img/favicon/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#62a8ea">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Leaflet 二维地图</title>
+  <script src="../lib/include-lib.js" include="jquery,bootstrap,admin-lte,haoutil" libpath="../lib/">
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <script src="js/docs.js"></script>
+  <style>
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: hidden
+    }
+  </style>
+</head>
+
+<body class="hold-transition skin-blue">
+  <header class="header-wrapper main-header"></header>
+  <script>
+    var identification = {
+      name: ""
+    };
+    $(".main-header").load("section/header.html")
+  </script><iframe id="myiframe" name="myiframe" src="" scrolling="auto" frameborder="0"
+    onload="window.changeFrameHeight&&changeFrameHeight()" style="width:100%"></iframe>
+  <script>
+    function changeFrameHeight() {
+      document.getElementById("myiframe").height = document.documentElement.clientHeight - 60
+    }
+    window.onresize = function () {
+      changeFrameHeight()
+    }, changeFrameHeight();
+    var url = haoutil.system.getRequestByName("id");
+    switch (url) {
+      default:
+      case "11":
+        url = "../forleaflet/go-leaflet.html";
+        break;
+      case "12":
+        url = "../forleaflet/examples.html";
+        break;
+      case "13":
+        url = "../forleaflet/reference_cn.html";
+        break;
+      case "14":
+        url = "../forleaflet/plugins.html";
+        break;
+      case "15":
+        url = "api.html";
+        break;
+      case "16":
+        url = "buy.html";
+        break;
+      case "17":
+        url = "http://marsgis.cn/w3cschool/index.html";
+        break;
+      case "21":
+      case "22":
+      case "23":
+      case "24":
+      case "gis":
+      case "v":
+        url = "file/" + url + ".pdf"
+    }
+    document.getElementById("myiframe").src = url + ""
+  </script>
+</body>
+
+</html>

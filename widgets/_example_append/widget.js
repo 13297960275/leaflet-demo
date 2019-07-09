@@ -1,0 +1,1 @@
+L.widget.bindClass(L.widget.BaseWidget.extend({map:null,options:{resources:["view.css"],view:[{type:"append",url:"view.html"}]},create:function(){},winCreateOK:function(e,t){},activate:function(){toastr.success("成功激活插件","_example_append")},disable:function(){toastr.warning("释放插件_example_append")}}));

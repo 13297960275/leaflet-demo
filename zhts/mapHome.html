@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>地图</title>
+  <script src="../lib/include-lib.js" libpath="../lib/"
+    include="jquery,animate,font-awesome,bootstrap,layer,mapV,echarts,haoutil,leaflet-mars,esri-leaflet,turf"></script>
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/home.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="centerDiv" class="main clearfix">
+    <div id="leftView" class="newbac left animated bounceInLeft">
+      <ul id="dataShow" class="data-show new-data">
+        <li>
+          <h3>平台设计项目数</h3><span><strong id="lbl_all_xms">0</strong>个</span>
+        </li>
+        <li>
+          <h3>项目总占地亩数</h3><span><strong id="lbl_all_zds">0</strong>亩</span>
+        </li>
+        <li>
+          <h3>项目所需资金量</h3><span><strong id="lbl_all_zjl">0</strong>亿</span>
+        </li>
+      </ul>
+      <ul id="projectProgress" class="project-progress new-pro">
+        <li>
+          <div class="prt-title clearfix">
+            <h4>现状运营设施</h4><span id="lbl_xmjd_xz">0个</span>
+          </div>
+          <div class="pro-bar">
+            <div id="lbl_xmjd_xz_bfb_bar" class="bar1"></div>
+          </div><span id="lbl_xmjd_xz_bfb" class="percentage">0%</span>
+        </li>
+        <li>
+          <div class="prt-title clearfix">
+            <h4>推进中设施</h4><span id="lbl_xmjd_tjz">0个</span>
+          </div>
+          <div class="pro-bar">
+            <div id="lbl_xmjd_tjz_bfb_bar" class="bar2"></div>
+          </div><span id="lbl_xmjd_tjz_bfb" class="percentage">0%</span>
+        </li>
+        <li>
+          <div class="prt-title clearfix">
+            <h4>远期规划设施</h4><span id="lbl_xmjd_yqgh">0个</span>
+          </div>
+          <div class="pro-bar">
+            <div id="lbl_xmjd_yqgh_bfb_bar" class="bar3"></div>
+          </div><span id="lbl_xmjd_yqgh_bfb" class="percentage">0%</span>
+        </li>
+      </ul>
+      <div id="dataCheck" class="data-check new-check">
+        <h4>进展数据核对</h4>
+        <p>已处理：<i id="lbl_jzsj_ycl">0</i>个<br>处理中：<i id="lbl_jzsj_clz">0</i>个<br>未处理：<i id="lbl_jzsj_wcl">0</i>个</p>
+      </div>
+    </div>
+    <div id="map" class="middle new-middle">
+      <ul id="tlView" class="state-ring new-state clearfix animated bounceInUp"></ul>
+    </div>
+    <div id="rightView" class="right new-right animated bounceInRight">
+      <div id="typeTjView" class="moudle new-moudle clearfix" style="height:255px">
+        <h4 class="pro-count">分类统计</h4>
+        <ul id="ul_fltj" class="mou-charts mou1 new-mou1">
+          <li class="clearfix">
+            <p>公共教育</p><span><i>0</i>个，投资<i>0</i>亿，占地<i>0</i>亩</span>
+          </li>
+          <li class="clearfix">
+            <p>公共文化</p><span><i>0</i>个，投资<i>0</i>亿，占地<i>0</i>亩</span>
+          </li>
+          <li class="clearfix">
+            <p>公共体育</p><span><i>0</i>个，投资<i>0</i>亿，占地<i>0</i>亩</span>
+          </li>
+          <li class="clearfix">
+            <p>医疗卫生</p><span><i>0</i>个，投资<i>0</i>亿，占地<i>0</i>亩</span>
+          </li>
+          <li class="clearfix">
+            <p>社会保障</p><span><i>0</i>个，投资<i>0</i>亿，占地<i>0</i>亩</span>
+          </li>
+          <li class="clearfix" style="border-bottom:none">
+            <p>基层公共服务</p><span><i>0</i>个，投资<i>0</i>亿，占地<i>0</i>亩</span>
+          </li>
+        </ul>
+      </div>
+      <div id="zijinTjView" class="moudle new-moudle clearfix">
+        <h4 class="money-count">分资金来源统计</h4>
+        <div id="echars_fzjly" class="mou-charts mou2"></div>
+      </div>
+      <div id="yearTjView" class="moudle new-moudle clearfix">
+        <h4 class="year-count">分年度统计</h4>
+        <div class="title new-tit clearfix"><span id="btn_ndtj_zjl">资金量</span> <span id="btn_ndtj_zds">占地数</span> <span
+            id="btn_ndtj_xms" class="selected">项目数</span> <label id="lbl_ndtj_dw">单位：个</label></div>
+        <div id="echars_fndxm" class="mou-charts mou3"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/home.js"></script>
+</body>
+
+</html>

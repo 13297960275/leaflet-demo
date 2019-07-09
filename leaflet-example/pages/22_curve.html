@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>Leaflet地图</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="../lib/include-lib.js" libpath="../lib/"
+    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet"></script>
+  <script src="../lib/leafletPlugins/_vector/leaflet.curve.js"></script>
+</head>
+
+<body>
+  <div id="map" class="map"></div>
+  <script>
+    var map;
+
+    function initMap() {
+      var a = haoutil.system.getRequestByName("config", "config/gcj.json");
+      L.mars.createMap({
+        id: "map",
+        url: a,
+        success: function (a, i) {
+          map = a, initWork()
+        }
+      })
+    }
+
+    function initWork() {
+      var a = L.featureGroup().addTo(map);
+      L.curve(["M", [36.86019101567027, 129.0478515625], "Q", [40.48547354578499, 123.818359375],
+        [36.70973594407157, 119.9072265625], "T", [36.6795944656402, 111.0302734375]
+      ], {
+        dashArray: 5,
+        animate: {
+          duration: 3e3,
+          iterations: 1 / 0
+        }
+      }).addTo(a), L.curve(["M", [30.14874640066278, 114.1064453125], "C", [31.67255514839676, 116.3037109375],
+        [30.14874640066278, 118.6767578125],
+        [32.866316729538674, 120.0927734375]
+      ]).addTo(a);
+      map.fitBounds(a.getBounds())
+    }
+    $(document).ready(function () {
+      initMap()
+    })
+  </script>
+</body>
+
+</html>

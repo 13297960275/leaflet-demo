@@ -1,0 +1,79 @@
+{
+  "where": {
+      "text": [
+          { "field": "like", "name": "模糊匹配" },
+          { "field": "=", "name": "等于" }
+      ],
+      "number": [
+          { "field": "=", "name": "=" },
+          { "field": "<>", "name": "<>" },
+          { "field": ">", "name": ">" },
+          { "field": ">=", "name": ">=" },
+          { "field": "<", "name": "<" },
+          { "field": "<=", "name": "<=" }
+      ]
+  },
+  "layers": [
+      { "name": "POI信息点", "id": 1 },
+      {
+          "name": "政府机关",
+          "pid": 1,
+          "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/18",
+          "columns": [
+              { "field": "NAME", "name": "名称" },
+              { "field": "address", "name": "地址" }
+          ]
+      },
+      {
+          "name": "停车场",
+          "pid": 1,
+          "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/14",
+          "columns": [
+              { "field": "NAME", "name": "名称" },
+              { "field": "address", "name": "地址" }
+          ]
+      },
+      { "name": "道路", "id": 2 },
+      {
+          "name": "县道",
+          "pid": 2,
+          "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/29",
+          "columns": [
+              { "field": "NAME", "name": "名称" },
+              { "field": "address", "name": "地址" }
+          ]
+      },
+      {
+          "name": "乡镇村道",
+          "pid": 2,
+          "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/28",
+          "columns": [
+              { "field": "NAME", "name": "名称" },
+              { "field": "address", "name": "地址" }
+          ]
+      },
+      { "name": "区域", "id": 3 },
+      {
+          "name": "建筑物",
+          "pid": 3,
+          "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/37",
+          "columns": [
+              { "field": "NAME", "name": "名称" },
+              { "field": "floor", "name": "楼层"}
+          ],
+          "columnsShow": {
+              "where": [ "NAME", "floor" ],
+              "table": [ "NAME", "floor" ]
+          }
+      }
+
+
+
+
+
+
+
+
+
+  ]
+}

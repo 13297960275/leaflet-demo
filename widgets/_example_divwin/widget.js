@@ -1,0 +1,1 @@
+L.widget.bindClass(L.widget.BaseWidget.extend({map:null,options:{resources:["view.css"],view:{type:"divwindow",url:"view.html",windowOptions:{width:250,height:300}}},create:function(){},winCreateOK:function(i,e){},activate:function(){toastr.info("激活插件_example_divwin")},disable:function(){toastr.info("释放插件_example_divwin")}}));

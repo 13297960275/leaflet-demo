@@ -1,0 +1,285 @@
+{
+  "defpage": "./map.html",
+  "menu": [
+      {
+          "name": "首页",
+          "icon": "fa fa-home",
+          "uri": "./mapHome.html"
+      },
+      {
+          "name": "地区情况",
+          "icon": "fa fa-cubes",
+          "children": [
+              {
+                  "name": "基本概况",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "全省情况",
+                          "uri": "../../widgetsTS/ts_showQyInfoSheng/widget.js"
+                      },
+                      {
+                          "name": "市州情况",
+                          "uri": "../../widgetsTS/ts_showQyInfo/widget.js?type=2",
+                          "data": "shi.json"
+                      },
+                      {
+                          "name": "区县情况",
+                          "uri": "../../widgetsTS/ts_showQyInfo/widget.js?type=3",
+                          "data": "xian.json"
+                      },
+                      {
+                          "name": "全省经济指标",
+                          "uri": "../../widgetsTS/showEcharts/sandian1.js"
+                      }
+                  ]
+              },
+              {
+                  "name": "指标对比",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "单项指标",
+                          "uri": "../../widgetsTS/ts_showPolyChartsOne/widget.js"
+                      },
+                      {
+                          "name": "多项指标",
+                          "uri": "../../widgetsTS/ts_showPolyCharts/widget.js"
+                      },
+                      {
+                          "name": "多项指标-无地图",
+                          "uri": "../../widgetsTS/ts_showPolyChartsNoMap/widget.js"
+                      }
+                  ]
+              },
+
+              {
+                  "name": "地区对比",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "相邻市州对比",
+                          "uri": "../../widgetsTS/ts_showQyInfoDB/widget.js?type=1",
+                          "data": "shi.json"
+                      },
+                      {
+                          "name": "相邻区县对比",
+                          "uri": "../../widgetsTS/ts_showQyInfoDB/widget.js?type=2",
+                          "data": "xian.json"
+                      },
+                      {
+                          "name": "散点对比",
+                          "uri": "../../widgetsTS/showEcharts/sandian3.js"
+                      },
+                      {
+                          "name": "比对汇总",
+                          "uri": "../../widgetsTS/ts_showDBHZ/widget.js",
+                          "windowOptions": {
+                              "position": {
+                                  "left": 1,
+                                  "right": 1,
+                                  "top": 1,
+                                  "bottom": 1
+                              }
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "专项数据",
+          "icon": "fa fa-calendar-plus-o",
+          "children": [
+              {
+                  "name": "分布情况",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "企业分布",
+                          "uri": "../../widgetsTS/queryQy/widget.js"
+                      },
+                      {
+                          "name": "小区分布",
+                          "uri": "../../widgetsTS/showMapV/polygon.js"
+                      }
+                  ]
+              },
+              {
+                  "name": "专项数据",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "含水层",
+                          "uri": "../../widgetsTS/ts_showView/widget1.js"
+                      },
+                      {
+                          "name": "经济特区",
+                          "uri": "../../widgetsTS/ts_showView/widget2.js"
+                      },
+                      {
+                          "name": "雨量流量监测",
+                          "uri": "../../widgetsTS/ts_showView/widget3.js"
+                      },
+
+                      {
+                          "name": "区域实际灌溉",
+                          "uri": "../../widgetsTS/ts_showView/widget4.js"
+                      },
+
+                      {
+                          "name": "大型洪水情况",
+                          "uri": "../../widgetsTS/ts_showView/widget5.js"
+                      },
+
+                      {
+                          "name": "主要城市水域",
+                          "uri": "../../widgetsTS/ts_showView/widget6.js"
+                      }
+                  ]
+              }
+
+          ]
+      },
+      {
+          "name": "数据分析",
+          "icon": "fa fa-podcast",
+          "children": [
+              {
+
+                  "name": "热力分析",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "热力图",
+                          "uri": "../../widgetsTS/showHeat/widget.js"
+                      },
+                      {
+                          "name": "城市空气质量",
+                          "uri": "../../widgetsTS/showEcharts/sandian2.js"
+                      },
+                      {
+                          "name": "蜂巢图",
+                          "uri": "../../widgetsTS/showMapV/gridHoneycomb.js"
+                      },
+                      {
+                          "name": "方格图",
+                          "uri": "../../widgetsTS/showMapV/gridPoint.js"
+                      },
+                      {
+                          "name": "公交路线热力图",
+                          "uri": "../../widgetsTS/showEcharts/lineroad2.js"
+                      },
+                      {
+                          "name": "道路拥堵图",
+                          "uri": "../../widgetsTS/showEcharts/lineroad.js"
+                      }
+                  ]
+
+              },
+              {
+                  "name": "专题统计",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "饼形图标记",
+                          "uri": "../../widgetsTS/showEcharts/marker1.js"
+                      },
+
+                      {
+                          "name": "折线图标记",
+                          "uri": "../../widgetsTS/showEcharts/marker2.js"
+                      },
+                      {
+                          "name": "线汇总",
+                          "uri": "../../widgetsTS/showMapV/polyline.js"
+                      },
+                      {
+                          "name": "强度线",
+                          "uri": "../../widgetsTS/showMapV/polylineIntensity.js"
+                      }
+                  ]
+              },
+              {
+                  "name": "动态分析",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "事故模拟",
+                          "uri": "../../widgetsTS/fx_sgmn/widget.js"
+                      },
+                      {
+                          "name": "数据查询",
+                          "uri": "../../widgetsTS/queryByWhere/widget.js"
+                      }
+                  ]
+              }
+          ]
+      },
+
+      {
+          "name": "综合态势",
+          "icon": "fa fa-ravelry",
+          "children": [
+
+              {
+                  "name": "大数据",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "微博动态",
+                          "uri": "../../widgetsTS/showMapV/pointWeibo.js"
+                      },
+                      {
+                          "name": "动态点",
+                          "uri": "../../widgetsTS/showMapV/pointTime.js"
+                      },
+                      {
+                          "name": "大迁徙图",
+                          "uri": "../../widgetsTS/showMapV/qianxiTime.js"
+                      }
+                  ]
+              },
+              {
+                  "name": "流向态势",
+                  "icon": "fa fa-folder-o",
+                  "children": [
+                      {
+                          "name": "流出线",
+                          "uri": "../../widgetsTS/showEcharts/line_chu.js"
+                      },
+                      {
+                          "name": "流入线",
+                          "uri": "../../widgetsTS/showEcharts/line_ru.js"
+                      },
+                      {
+                          "name": "物流运输图",
+                          "uri": "../../widgetsTS/showEcharts/line1.js"
+                      },
+                      {
+                          "name": "人口迁徙图",
+                          "uri": "../../widgetsTS/showEcharts/line2.js"
+                      },
+                      {
+                          "name": "强边界流向图",
+                          "uri": "../../widgetsTS/showMapV/lineforceEdgeBunding.js"
+                      },
+                      {
+                          "name": "迁徙图",
+                          "uri": "../../widgetsTS/showMapV/qianxi.js"
+                      },
+                      {
+                          "name": "动态轨迹",
+                          "uri": "../../widgetsTS/showMapV/lineTime.js"
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "系统管理",
+          "icon": "fa fa-cubes",
+          "uri": "../../ui/index.html"
+      }
+  ]
+}

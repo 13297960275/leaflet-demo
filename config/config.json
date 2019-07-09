@@ -8,7 +8,8 @@
     "minZoom": 3,
     "maxZoom": 18,
     "centerAutoLevel": 15,
-    "controls": [{
+    "controls": [
+      {
         "type": "scale"
       },
       {
@@ -30,7 +31,8 @@
         "visible": false
       }
     ],
-    "basemaps": [{
+    "basemaps": [
+      {
         "id": 10,
         "name": "地图底图",
         "type": "group"
@@ -120,7 +122,8 @@
         "icon": "baiduimage.png"
       }
     ],
-    "operationallayers": [{
+    "operationallayers": [
+      {
         "id": 20,
         "name": "辅助图层",
         "type": "group"
@@ -136,8 +139,6 @@
         "type": "www_gaode",
         "layer": "time"
       },
-
-
       {
         "id": 40,
         "name": "栅格数据",
@@ -168,7 +169,6 @@
         "transparent": true,
         "format": "image/png"
       },
-
       {
         "pid": 4020,
         "name": "道路线",
@@ -199,14 +199,12 @@
         "transparent": true,
         "format": "image/png"
       },
-
       {
         "id": 4010,
         "pid": 40,
         "name": "ArcGIS Dynamic",
         "type": "group"
       },
-
       {
         "pid": 4010,
         "name": "规划图",
@@ -231,7 +229,6 @@
         "layers": [24],
         "popup": "{NAME}"
       },
-
       {
         "id": 30,
         "name": "矢量数据",
@@ -260,15 +257,12 @@
         },
         "popup": "all"
       },
-
       {
         "id": 3010,
         "pid": 30,
         "name": "ArcGIS Feature",
         "type": "group"
       },
-
-
       {
         "pid": 3010,
         "name": "加油站",
@@ -291,7 +285,8 @@
         "name": "服务区",
         "type": "arcgis_feature",
         "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/16",
-        "columns": [{
+        "columns": [
+          {
             "field": "NAME",
             "name": "名称"
           },
@@ -363,8 +358,6 @@
         },
         "visible": false
       },
-
-
       {
         "pid": 3010,
         "name": "铁路",
@@ -380,7 +373,6 @@
         },
         "visible": false
       },
-
       {
         "pid": 3010,
         "name": "乡镇",
@@ -475,7 +467,8 @@
             "popupAnchor": [0, -44]
           }
         },
-        "popup": [{
+        "popup": [
+          {
             "field": "项目名称",
             "name": "项目名称"
           },
@@ -575,11 +568,8 @@
           }
         ]
       }
-
     ]
-
   },
-
   "widget": {
     "debugger": true,
     "version": "",
@@ -596,14 +586,16 @@
       "autoDisable": true,
       "disableOhter": true
     },
-    "widgetsAtStart": [{
+    "widgetsAtStart": [
+      {
         "name": "右上角工具栏",
         "uri": "widgets/toolBar/widget.js",
-        "data": [{
+        "data": [
+          {
             "name": "漫游",
             "icon": "fa fa-globe",
             "onclick": "L.widget.disableAll()",
-            "visible": true
+            "visible": false
           },
           {
             "name": "地图",
@@ -698,7 +690,8 @@
       {
         "name": "模板",
         "type": "group",
-        "children": [{
+        "children": [
+          {
             "name": "iframe弹窗模板",
             "uri": "widgets/_example/widget.js",
             "windowOptions": {
@@ -724,9 +717,39 @@
         ]
       },
       {
-        "name": "地图工具",
+        "name": "插件",
         "type": "group",
-        "children": [{
+        "children": [
+          {
+            "name": "iframe弹窗模板",
+            "uri": "widgets/_example/widget.js",
+            "windowOptions": {
+              "width": 300,
+              "height": 400,
+              "position": {
+                "bottom": 50,
+                "right": 10
+              },
+              "maxmin": true,
+              "resize": true
+            },
+            "openAtStart": false
+          },
+          {
+            "name": "div弹窗模板",
+            "uri": "widgets/_example_divwin/widget.js"
+          },
+          {
+            "name": "append模板",
+            "uri": "widgets/_example_append/widget.js"
+          }
+        ]
+      },
+      {
+        "name": "工具",
+        "type": "group",
+        "children": [
+          {
             "id": "manageBasemaps",
             "name": "地图切换",
             "uri": "widgets/manageBasemaps/widget.js",
@@ -815,9 +838,10 @@
         ]
       },
       {
-        "name": "Echarts态势",
+        "name": "Echarts",
         "type": "group",
-        "children": [{
+        "children": [
+          {
             "name": "饼形图标记",
             "uri": "widgetsTS/showEcharts/marker1.js"
           },
@@ -825,7 +849,6 @@
             "name": "折线图标记",
             "uri": "widgetsTS/showEcharts/marker2.js"
           },
-
           {
             "name": "全省经济指标",
             "uri": "widgetsTS/showEcharts/sandian1.js"
@@ -842,7 +865,6 @@
             "name": "散点图微博签到",
             "uri": "widgetsTS/showEcharts/sandianWeibo.js"
           },
-
           {
             "name": "流出线",
             "uri": "widgetsTS/showEcharts/line_chu.js"
@@ -878,9 +900,10 @@
         ]
       },
       {
-        "name": "MapV态势",
+        "name": "MapV",
         "type": "group",
-        "children": [{
+        "children": [
+          {
             "name": "蜂巢图",
             "uri": "widgetsTS/showMapV/gridHoneycomb.js"
           },
@@ -929,7 +952,8 @@
       {
         "name": "ts态势",
         "type": "group",
-        "children": [{
+        "children": [
+          {
             "name": "全省情况",
             "uri": "widgetsTS/ts_showQyInfoSheng/widget.js"
           },
@@ -977,7 +1001,6 @@
               }
             }
           },
-
           {
             "name": "大型洪水情况",
             "uri": "widgetsTS/ts_showView/widget5.js"
@@ -986,18 +1009,17 @@
             "name": "主要城市水域",
             "uri": "widgetsTS/ts_showView/widget6.js"
           },
-
           {
             "name": "事故模拟",
             "uri": "widgetsTS/fx_sgmn/widget.js"
           }
-
         ]
       },
       {
         "name": "常用功能",
         "type": "group",
-        "children": [{
+        "children": [
+          {
             "name": "要素编辑",
             "uri": "widgetsTS/editFeature/widget.js",
             "layers": [{
@@ -1148,7 +1170,6 @@
             "name": "ArcPOI查询",
             "uri": "widgetsTS/geosearch/widget.js"
           },
-
           {
             "name": "POI周边查询",
             "uri": "widgetsTS/queryBaiduPOICircle/widget.js",
@@ -1160,21 +1181,12 @@
               }
             }
           },
-
           {
             "name": "热力图",
             "uri": "widgetsTS/showHeat/widget.js"
           }
-
         ]
       }
-
-
-
     ]
   }
-
-
-
-
 }

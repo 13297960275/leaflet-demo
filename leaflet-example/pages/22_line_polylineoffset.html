@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>Leaflet地图</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="../lib/include-lib.js" libpath="../lib/"
+    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet"></script>
+  <script src="../lib/leafletPlugins/_vector/leaflet.polylineoffset.js"></script>
+</head>
+
+<body>
+  <div id="map" class="map"></div>
+  <script>
+    var map;
+
+    function initMap() {
+      var o = haoutil.system.getRequestByName("config", "config/wgs84.json");
+      L.mars.createMap({
+        id: "map",
+        url: o,
+        success: function (o, a) {
+          map = o, initWork()
+        }
+      })
+    }
+
+    function initWork() {
+      var o = [
+          [31.853069, 117.154857],
+          [31.848546, 117.15404],
+          [31.846285, 117.153482],
+          [31.844166, 117.151462],
+          [31.84183, 117.150301],
+          [31.839572, 117.151505],
+          [31.836659, 117.153999],
+          [31.834728, 117.155159],
+          [31.833051, 117.155461]
+        ],
+        a = L.polyline(o, {
+          weight: 1,
+          dashArray: "5,10",
+          color: "black",
+          opacity: .3
+        }).addTo(map);
+      L.polyline(o, {
+        color: "#f00",
+        opacity: 1,
+        offset: -5
+      }).addTo(map), L.polyline(o, {
+        color: "#080",
+        opacity: 1,
+        offset: 5
+      }).addTo(map);
+      map.fitBounds(a.getBounds())
+    }
+    $(document).ready(function () {
+      initMap()
+    })
+  </script>
+</body>
+
+</html>

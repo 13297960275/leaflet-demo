@@ -1,0 +1,1 @@
+var thisWidget,arrInfoData=[];function initWidgetView(i){thisWidget=i,$.getJSON("data/info.json",function(i){arrInfoData=i})}function showTip(i){$("#info_name").html(i.name);for(var n=0;n<arrInfoData.length;n++){var a=arrInfoData[n];a.id==i.id&&($("#info_jianjie").html(a.jianjie||"略"),$("#info_jinji").html(a.jinji||"略"),$("#info_shuili").html(a.shuili||"略"))}}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="keywords" content="可视化">
+  <meta name="description" content="综合态势展示系统">
+  <link rel="icon" href="img/favicon.ico">
+  <title>综合态势展示系统 - 登录</title>
+  <link href="../lib/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../lib/layer/theme/default/layer.css" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
+  <link href="./css/login.css" rel="stylesheet">
+</head>
+
+<body class="body">
+  <div id="loginBJ" class="loginContainer"><img src="img/login/bg2.jpg" class="img"> <img src="img/login/bg3.jpg"
+      class="img"> <img src="img/login/bg1.jpg" class="img"></div>
+  <div class="logo"><img src="img/logo.png" alt="">综合态势展示系统</div>
+  <div class="login">
+    <h3>欢迎登录</h3>
+    <form>
+      <ul>
+        <li><input id="txtUser" type="text" name="user" value="leaflet" placeholder="用户名"><i class="fa fa-user"></i>
+        </li>
+        <li><input id="txtPwd" type="password" name="pwd" value="leaflet" placeholder="密码"><i class="fa fa-key"></i>
+        </li>
+        <li>
+          <div id="slider" class="slide_no">
+            <div class="drag_bg"></div>
+            <div class="drag_text" onselectstart="return!1" unselectable="on">请按住滑块，拖动到最右边</div>
+            <div class="handler handler_bg"></div>
+          </div>
+        </li>
+      </ul>
+      <p><button id="btnLogin" type="button">登录</button></p>
+    </form>
+  </div>
+  <div class="footer">
+    <p>copyright &copy; <a href="" target="_blank"></a> 2018</p>
+  </div>
+  <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
+  <script src="../lib/layer/layer.js"></script>
+  <script src="../lib/hao/haoutil.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+
+</html>

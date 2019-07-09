@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>Leaflet地图</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="../lib/include-lib.js" libpath="../lib/"
+    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet"></script>
+  <script src="../lib/leafletPlugins/line/MovingMarker.js"></script>
+</head>
+
+<body>
+  <div id="map" class="map"></div>
+  <script>
+    var map;
+
+    function initMap() {
+      var o = haoutil.system.getRequestByName("config", "config/gcj.json");
+      L.mars.createMap({
+        id: "map",
+        url: o,
+        success: function (o, a) {
+          map = o, initWork()
+        }
+      })
+    }
+
+    function initWork() {
+      var o = L.icon({
+          iconUrl: "img/marker/bike.png",
+          iconSize: [25, 39],
+          iconAnchor: [12, 39],
+          shadowUrl: null
+        }),
+        a = [
+          [31.85044, 117.102757],
+          [31.851607, 117.143269],
+          [31.852919, 117.185154],
+          [31.857002, 117.216396],
+          [31.851607, 117.233219],
+          [31.854085, 117.253132],
+          [31.872893, 117.252102],
+          [31.872164, 117.236652],
+          [31.873184, 117.22086],
+          [31.875663, 117.21365]
+        ];
+      map.fitBounds(a);
+      var n = L.Marker.movingMarker(a, [3e3, 9e3, 9e3, 4e3], {
+        icon: o,
+        autostart: !0
+      }).addTo(map);
+      L.polyline(a, {
+        color: "red"
+      }).addTo(map);
+      n.on("end", function () {
+        n.bindPopup("<b>Welcome to Bucarest !</b>", {
+          closeOnClick: !1
+        }).openPopup()
+      });
+      var e = [
+          [31.829441, 117.113914],
+          [31.830607, 117.133656],
+          [31.820689, 117.132969],
+          [31.822148, 117.15992],
+          [31.820835, 117.176914],
+          [31.814563, 117.192364],
+          [31.803768, 117.184124],
+          [31.802747, 117.170906],
+          [31.804351, 117.158546],
+          [31.802601, 117.131252]
+        ],
+        i = L.Marker.movingMarker(e, 1e4, {
+          icon: o,
+          autostart: !0
+        }).addTo(map);
+      i.addStation(1, 2e3), i.addStation(2, 2e3), i.addStation(3, 2e3), i.addStation(4, 2e3), L.polyline(e, {
+        color: "green"
+      }).addTo(map)
+    }
+    $(document).ready(function () {
+      initMap()
+    })
+  </script>
+</body>
+
+</html>

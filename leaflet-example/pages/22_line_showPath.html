@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>Leaflet地图</title>
+  <script src="../lib/include-lib.js" libpath="../lib/"
+    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet,turf"></script>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="map" class="map"></div>
+  <div class="infoview"><input type="button" class="btn btn-primary" value="开始" onclick="workPath.layerWork.snakeIn()">
+    <input type="button" class="btn btn-primary" value="停止" onclick="workPath.layerWork.snakeOut()"> <input
+      type="button" class="btn btn-primary" value="暂停" onclick="workPath.layerWork.snakeZT()"> <input type="button"
+      class="btn btn-primary" value="继续" onclick="workPath.layerWork.snakeJX()"></div>
+  <script src="../lib/leafletPlugins/line/L.Polyline.SnakeAnim.js"></script>
+  <script src="../lib/leafletPlugins/oms/oms.min.js"></script>
+  <script>
+    var map;
+
+    function initMap() {
+      var e = haoutil.system.getRequestByName("config", "config/gcj.json");
+      L.mars.createMap({
+        id: "map",
+        url: e,
+        success: function (e, n) {
+          map = e, initWork()
+        }
+      })
+    }
+
+    function initWork() {
+      workPath.showData([{
+        name: "汇展园社区",
+        jd: 117.144985,
+        wd: 31.851898
+      }, {
+        name: "丰北社区",
+        jd: 117.186699,
+        wd: 31.852336
+      }, {
+        name: "桂林路社区",
+        jd: 117.214336,
+        wd: 31.857147
+      }, {
+        name: "汇展园社区",
+        jd: 117.212963,
+        wd: 31.840816
+      }, {
+        name: "鲤鱼山路社区",
+        jd: 117.212963,
+        wd: 31.833087
+      }, {
+        name: "瑞昌街明山社区",
+        jd: 117.225838,
+        wd: 31.832795
+      }, {
+        name: "三工村上二队",
+        jd: 117.225838,
+        wd: 31.829003
+      }, {
+        name: "三工村下二队",
+        jd: 117.231159,
+        wd: 31.82842
+      }, {
+        name: "唐山路社区",
+        jd: 117.230816,
+        wd: 31.851461
+      }, {
+        name: "桂林路社区",
+        jd: 117.214336,
+        wd: 31.857147
+      }, {
+        name: "丰北社区",
+        jd: 117.186699,
+        wd: 31.852336
+      }, {
+        name: "汇展园社区",
+        jd: 117.144985,
+        wd: 31.851898
+      }, {
+        name: "丰北社区",
+        jd: 117.186699,
+        wd: 31.852336
+      }, {
+        name: "桂林路社区",
+        jd: 117.214336,
+        wd: 31.857147
+      }])
+    }
+    $(document).ready(function () {
+      initMap()
+    });
+    var workPath = {
+      layerWork: null,
+      layerPeopleLineOSM: null,
+      create: function () {
+        this.layerWork = L.featureGroup([]).addTo(map), this.layerPeopleLineOSM = new OverlappingMarkerSpiderfier(
+          map, {
+            keepSpiderfied: !0
+          })
+      },
+      numicon: {},
+      getIconByNum: function (e) {
+        if (null == this.numicon[e]) {
+          var n =
+            '<div style="margin-left: -25px; margin-top: -50px; width: 50px; height: 50px; float: left; "><img src="img/marker/b1.png" /></div><div style="margin-left: ' +
+            (e < 10 ? "-4" : "-6") + 'px; margin-top: -47px; width: 50px; height: 50px;">' + e + "</div>";
+          this.numicon[e] = L.divIcon({
+            iconSize: [0, 0],
+            popupAnchor: [0, -30],
+            html: n
+          })
+        }
+        return this.numicon[e]
+      },
+      showData: function (e) {
+        null == this.layerWork && this.create(), this.layerWork.clearLayers(), this.layerPeopleLineOSM
+        .clearMarkers();
+        for (var n = {}, a = 0; a < e.length; a++) {
+          var r = e[a],
+            t = [r.wd, r.jd];
+          if (0 != a) {
+            var i = e[a - 1],
+              o = [i.wd, i.jd],
+              d = i.name + r.name;
+            n.hasOwnProperty(d) ? n[d] = n[d] + 1 : (n[d] = 0, d = r.name + i.name, n.hasOwnProperty(d) || (n[d] =
+              0));
+            var m = getLine(o, t, n[d]),
+              l = L.polyline(m);
+            this.layerWork.addLayer(l)
+          }
+          var s = L.marker(t, {
+            icon: this.getIconByNum(a + 1)
+          });
+          s.bindPopup("<b>" + r.name + "</b>"), this.layerWork.addLayer(s), this.layerPeopleLineOSM.addMarker(s)
+        }
+        map.fitBounds(this.layerWork.getBounds()), this.layerWork.snakeIn()
+      }
+    };
+
+    function getLine(e, n, a) {
+      if (0 == a) return [e, n];
+      e = L.latLng(e), n = L.latLng(n);
+      var r = turf.point([e.lng, e.lat]),
+        t = turf.point([n.lng, n.lat]),
+        i = turf.midpoint(r, t),
+        o = e.distanceTo(n) / 2e4;
+      o *= a;
+      var d = turf.bearing(r, t) + 90,
+        m = turf.destination(i, o, d, {
+          units: "kilometers"
+        }),
+        l = turf.lineString([r.geometry.coordinates, m.geometry.coordinates, t.geometry.coordinates]),
+        s = turf.bezier(l);
+      return L.GeoJSON.coordsToLatLngs(s.geometry.coordinates)
+    }
+  </script>
+</body>
+
+</html>

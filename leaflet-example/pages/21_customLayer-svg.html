@@ -1,0 +1,346 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1"><meta name="author" content=" "><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="x5-fullscreen" content="true"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Leaflet地图</title><script src="../lib/include-lib.js" libpath="../lib/" include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet"></script><link href="css/style.css" rel="stylesheet"><style>.leaflet-ant-path{fill:none;animation:linear infinite leaflet-ant-path-animation}@keyframes leaflet-ant-path-animation{from{stroke-dashoffset:100%}to{stroke-dashoffset:0}}</style></head><body><div id="map" class="map"></div><script src="../lib/leafletPlugins/_vector/Leaflet.CustomLayer.js"></script><script>$(document).ready(function () {
+  initMap();
+});
+
+
+//地图加载
+var map;
+function initMap() {
+  var configfile = haoutil.system.getRequestByName("config", "config/gcj.json");
+
+  L.mars.createMap({
+      id: "map",
+      url: configfile,
+      success: function (_map, gisdata) {
+          map = _map;
+          initWork();
+      }
+  });
+}
+
+
+var lines = (function () {
+  var geoCoordMap = {
+      "上海": [31.2891, 121.4648],
+      "东莞": [22.901, 113.8953],
+      "东营": [37.5513, 118.7073],
+      "中山": [22.478, 113.4229],
+      "临汾": [36.1615, 111.4783],
+      "临沂": [35.2936, 118.3118],
+      "丹东": [40.4242, 124.541],
+      "丽水": [28.1854, 119.5642],
+      "乌鲁木齐": [43.5883, 87.9236],
+      "佛山": [23.1097, 112.8955],
+      "保定": [39.0948, 115.0488],
+      "兰州": [36.3043, 103.5901],
+      "包头": [41.4899, 110.3467],
+      "北京": [40.2539, 116.4551],
+      "北海": [21.6211, 109.314],
+      "南京": [31.9208, 118.8062],
+      "南宁": [23.1152, 108.479],
+      "南昌": [28.6633, 116.0046],
+      "南通": [32.1625, 121.1023],
+      "厦门": [24.6478, 118.1689],
+      "台州": [28.6688, 121.1353],
+      "合肥": [32.0581, 117.29],
+      "呼和浩特": [40.4901, 111.4124],
+      "咸阳": [34.8706, 108.4131],
+      "哈尔滨": [45.368, 127.9688],
+      "唐山": [39.6826, 118.4766],
+      "嘉兴": [30.6354, 120.9155],
+      "大同": [39.8035, 113.7854],
+      "大连": [39.4409, 122.2229],
+      "天津": [39.4189, 117.4219],
+      "太原": [37.9413, 112.3352],
+      "威海": [37.1393, 121.9482],
+      "宁波": [29.6466, 121.5967],
+      "宝鸡": [34.3433, 107.1826],
+      "宿迁": [33.7775, 118.5535],
+      "常州": [31.5582, 119.4543],
+      "广州": [23.2196, 113.5107],
+      "廊坊": [39.0509, 116.521],
+      "延安": [36.4252, 109.1052],
+      "张家口": [40.8527, 115.1477],
+      "徐州": [34.3268, 117.5208],
+      "德州": [37.2107, 116.6858],
+      "惠州": [23.1647, 114.6204],
+      "成都": [30.7617, 103.9526],
+      "扬州": [32.8162, 119.4653],
+      "承德": [41.4075, 117.5757],
+      "拉萨": [30.1465, 91.1865],
+      "无锡": [31.5527, 120.3442],
+      "日照": [35.5023, 119.2786],
+      "昆明": [25.4663, 102.9199],
+      "杭州": [29.8773, 119.5313],
+      "枣庄": [34.8926, 117.323],
+      "柳州": [24.9774, 109.3799],
+      "株洲": [27.0319, 113.5327],
+      "武汉": [30.6628, 114.3896],
+      "汕头": [23.3405, 117.1692],
+      "江门": [22.1484, 112.6318],
+      "沈阳": [42.1216, 123.1238],
+      "沧州": [38.2104, 116.8286],
+      "河源": [23.9722, 114.917],
+      "泉州": [25.1147, 118.3228],
+      "泰安": [36.0516, 117.0264],
+      "泰州": [32.5525, 120.0586],
+      "济南": [36.8701, 117.1582],
+      "济宁": [35.3375, 116.8286],
+      "海口": [19.8516, 110.3893],
+      "淄博": [36.6064, 118.0371],
+      "淮安": [33.4039, 118.927],
+      "深圳": [22.5439, 114.5435],
+      "清远": [24.3292, 112.9175],
+      "温州": [27.8119, 120.498],
+      "渭南": [35.0299, 109.7864],
+      "湖州": [30.7782, 119.8608],
+      "湘潭": [27.7075, 112.5439],
+      "滨州": [37.4963, 117.8174],
+      "潍坊": [36.524, 119.0918],
+      "烟台": [37.5128, 120.7397],
+      "玉溪": [23.8898, 101.9312],
+      "珠海": [22.1155, 113.7305],
+      "盐城": [33.5577, 120.2234],
+      "盘锦": [41.0449, 121.9482],
+      "石家庄": [38.1006, 114.4995],
+      "福州": [25.9222, 119.4543],
+      "秦皇岛": [40.0232, 119.2126],
+      "绍兴": [29.7565, 120.564],
+      "聊城": [36.4032, 115.9167],
+      "肇庆": [23.5822, 112.1265],
+      "舟山": [30.2234, 122.2559],
+      "苏州": [31.3989, 120.6519],
+      "莱芜": [36.2714, 117.6526],
+      "菏泽": [35.2057, 115.6201],
+      "营口": [40.4297, 122.4316],
+      "葫芦岛": [40.578, 120.1575],
+      "衡水": [37.7161, 115.8838],
+      "衢州": [28.8666, 118.6853],
+      "西宁": [36.8207, 101.4038],
+      "西安": [34.2004, 109.1162],
+      "贵阳": [26.7682, 106.6992],
+      "连云港": [34.552, 119.1248],
+      "邢台": [37.2821, 114.8071],
+      "邯郸": [36.535, 114.4775],
+      "郑州": [34.6234, 113.4668],
+      "鄂尔多斯": [39.2487, 108.9734],
+      "重庆": [30.1904, 107.7539],
+      "金华": [29.1028, 120.0037],
+      "铜川": [35.1947, 109.0393],
+      "银川": [38.1775, 106.3586],
+      "镇江": [31.9702, 119.4763],
+      "长春": [44.2584, 125.8154],
+      "长沙": [28.2568, 113.0823],
+      "长治": [36.4746, 112.8625],
+      "阳泉": [38.0951, 113.4778],
+      "青岛": [36.3373, 120.4651],
+      "韶关": [24.7028, 113.7964]
+  }
+
+  var BJData = [
+      [{ name: "成都" }, { name: "潍坊", value: 5 }],
+      [{ name: "潍坊" }, { name: "西宁", value: 5 }],
+      [{ name: "西宁" }, { name: "温州", value: 5 }],
+      [{ name: "温州" }, { name: "东莞", value: 5 }],
+      [{ name: "东莞" }, { name: "汕头", value: 5 }],
+      [{ name: "汕头" }, { name: "福州", value: 5 }],
+      [{ name: "福州" }, { name: "连云港", value: 5 }],
+      [{ name: "连云港" }, { name: "长春", value: 5 }],
+      [{ name: "长春" }, { name: "南昌", value: 5 }],
+      [{ name: "南昌" }, { name: "咸阳", value: 5 }],
+      [{ name: "咸阳" }, { name: "廊坊", value: 5 }],
+      [{ name: "廊坊" }, { name: "沈阳", value: 5 }],
+      [{ name: "沈阳" }, { name: "西安", value: 5 }],
+      [{ name: "西安" }, { name: "南京", value: 5 }],
+      [{ name: "南京" }, { name: "连云港", value: 5 }],
+      [{ name: "连云港" }, { name: "深圳", value: 5 }],
+      [{ name: "深圳" }, { name: "泰安", value: 5 }],
+      [{ name: "泰安" }, { name: "武汉", value: 5 }],
+      [{ name: "武汉" }, { name: "昆明", value: 5 }],
+      [{ name: "昆明" }, { name: "南京", value: 5 }],
+      [{ name: "南京" }, { name: "武汉", value: 5 }],
+      [{ name: "武汉" }, { name: "烟台", value: 5 }],
+      [{ name: "烟台" }, { name: "长春", value: 5 }],
+      [{ name: "长春" }, { name: "贵阳", value: 5 }],
+      [{ name: "贵阳" }, { name: "宿迁", value: 5 }],
+      [{ name: "宿迁" }, { name: "徐州", value: 5 }],
+      [{ name: "徐州" }, { name: "丽水", value: 5 }],
+      [{ name: "丽水" }, { name: "长沙", value: 5 }],
+      [{ name: "长沙" }, { name: "沧州", value: 5 }],
+      [{ name: "沧州" }, { name: "盐城", value: 5 }],
+      [{ name: "盐城" }, { name: "宁波", value: 5 }],
+      [{ name: "宁波" }, { name: "宁波", value: 5 }],
+      [{ name: "宁波" }, { name: "泰安", value: 5 }],
+      [{ name: "泰安" }, { name: "厦门", value: 5 }],
+      [{ name: "厦门" }, { name: "保定", value: 5 }],
+      [{ name: "保定" }, { name: "宿迁", value: 5 }],
+      [{ name: "宿迁" }, { name: "深圳", value: 5 }],
+      [{ name: "深圳" }, { name: "贵阳", value: 5 }],
+      [{ name: "贵阳" }, { name: "金华", value: 5 }],
+      [{ name: "金华" }, { name: "肇庆", value: 5 }],
+      [{ name: "肇庆" }, { name: "金华", value: 5 }],
+      [{ name: "金华" }, { name: "苏州", value: 5 }],
+      [{ name: "苏州" }, { name: "东莞", value: 5 }],
+      [{ name: "东莞" }, { name: "惠州", value: 5 }],
+      [{ name: "惠州" }, { name: "邯郸", value: 5 }],
+      [{ name: "邯郸" }, { name: "玉溪", value: 5 }],
+      [{ name: "玉溪" }, { name: "中山", value: 5 }],
+      [{ name: "中山" }, { name: "乌鲁木齐", value: 5 }],
+      [{ name: "乌鲁木齐" }, { name: "廊坊", value: 5 }],
+      [{ name: "廊坊" }, { name: "廊坊", value: 5 }]
+  ];
+
+  var convertData = function (data) {
+      var res = [];
+      for (var i = 0; i < data.length; i++) {
+          var dataItem = data[i];
+          var fromCoord = geoCoordMap[dataItem[0].name];
+          var toCoord = geoCoordMap[dataItem[1].name];
+          if (fromCoord && toCoord) {
+              res.push({
+                  fromName: dataItem[0].name,
+                  toName: dataItem[1].name,
+                  coords: [fromCoord, toCoord],
+                  value: dataItem[1].value
+              });
+          }
+      }
+      return res;
+  };
+
+  return convertData(BJData);
+})();
+
+
+//当前页面业务相关
+function initWork() { 
+  map.changeBaseMap(1);
+  map.setView([38.028658, 105.403119], 4);
+
+  let data = lines; // data
+
+  function addLineItem() {
+      const g = this.svgDOMUtil("g");
+
+      const path = this.svgDOMUtil("path", {
+          class: "leaflet-ant-path",
+          style: "animation-duration: 100s;",
+          stroke: "#f7eb0a",
+          "stroke-width": 3,
+          "stroke-linecap": "round",
+          "stroke-dasharray": "4, 6",
+          fill: "none",
+          d: ""
+      });
+
+      const arrow = this.svgDOMUtil("polygon", {
+          stroke: "none",
+          "stroke-width": 0,
+          fill: "#f7eb0a",
+          points: "",
+          transform: ""
+      });
+
+      g.appendChild(path);
+      g.appendChild(arrow);
+
+      return { g, path, arrow };
+  };
+
+  function getLinePathData(latlng1, latlng2, q) {
+      const p1 = this._map.latLngToContainerPoint(latlng1);
+      const p2 = this._map.latLngToContainerPoint(latlng2);
+
+      const L = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+      const zx = p1.x - L / q;
+      const zy = p1.y - L / 2;
+      const angle = (Math.PI / 180) * 90 + Math.atan2(p2.y - p1.y, p2.x - p1.x);
+      const qx =
+          (zx - p1.x) * Math.cos(angle) - (zy - p1.y) * Math.sin(angle) + p1.x;
+      const qy =
+          (zx - p1.x) * Math.sin(angle) + (zy - p1.y) * Math.cos(angle) + p1.y;
+      const arrawangle =
+          Math.atan2(qy - p2.y, qx - p2.x) - (Math.PI / 180) * 90;
+      return {
+          linepath: `M${p1.x},${p1.y} Q${qx},${qy} ${p2.x},${p2.y}`,
+          arrowpath: `${p2.x},${p2.y - 9} ${p2.x + 5},${p2.y + 5} ${p2.x},${p2.y +
+              2} ${p2.x - 5},${p2.y + 5}`,
+          rotate: `rotate(${(arrawangle * 180) / Math.PI},${p2.x},${p2.y})`
+      };
+  }
+
+  var svgLayer = L.customLayer({
+      container: svgDOMUtil("svg"),
+      padding: 0.1,
+      opacity: 1
+  });
+
+  svgLayer.on("layer-beforemount", function () {
+      console.log("layer-beforemount");
+
+      this.group = svgDOMUtil("g");
+      this.source = {};
+  });
+
+
+  svgLayer.on("layer-mounted", function () {
+      console.log("layer-mounted");
+
+      this.getContainer().appendChild(this.group);
+
+      data.forEach((item, index) => {
+          let $item = addLineItem(item, index);
+          this.source[index] = $item;
+          this.group.appendChild($item.g);
+      });
+  });
+
+  svgLayer.on("layer-render", function () {
+      console.log("layer-render");
+
+      const container = this.getContainer();
+      var size = this._bounds.getSize(); // resize
+      var padding = this._padding;
+
+      container.setAttribute("width", size.x);
+      container.setAttribute("height", size.y);
+      container.style.width = size.x + "px";
+      container.style.height = size.y + "px";
+      container.setAttribute("viewBox", `${-padding.x} ${-padding.y} ${size.x} ${size.y}`);
+
+      data.forEach((item, index) => {
+          const d = getLinePathData.bind(this)(item.coords[0], item.coords[1], item.value);
+
+          let $item = this.source[index];
+          $item.path.setAttribute("d", d.linepath);
+          $item.arrow.setAttribute("points", d.arrowpath);
+          $item.arrow.setAttribute("transform", d.rotate);
+      });
+  });
+
+  svgLayer.on("layer-beforedestroy", function () {
+      console.log("layer-beforedestroy");
+  });
+
+  svgLayer.on("layer-destroyed", function () {
+      console.log("layer-destroyed");
+  });
+
+  svgLayer.addTo(map);
+
+
+}
+
+
+
+
+function svgDOMUtil(tag, attrs = {}) {
+  var el;
+  if (typeof tag === "string") {
+      el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  } else {
+      el = tag;
+  }
+  for (var k in attrs) el.setAttribute(k, attrs[k]);
+  return el;
+}</script></body></html>
