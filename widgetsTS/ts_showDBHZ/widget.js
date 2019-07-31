@@ -1,0 +1,1 @@
+L.widget.bindClass(L.widget.BaseWidget.extend({options:{view:{type:"window",url:"view.html",windowOptions:{width:400,height:280}}},create:function(){},viewWindow:null,winCreateOK:function(i,t){this.viewWindow=t},activate:function(){$(".toolBar").hide()},disable:function(){$(".toolBar").show()}}));
