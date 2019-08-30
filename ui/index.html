@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
+
 <head>
-    <title>管理系统</title>
+    <title>火星科技管理系统</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 移动设备 viewport -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
     <meta name="author" content="Muyao">
     <!-- 360浏览器默认使用Webkit内核 -->
     <meta name="renderer" content="webkit">
@@ -36,7 +38,7 @@
     <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./lib/admui/css/index.css" id="admui-siteStyle">
     <!-- 图标 CSS-->
-    <link rel="stylesheet" href="./lib/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./lib/fonts/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="./lib/fonts/web-icons/web-icons.css">
     <!-- 插件 CSS -->
     <link rel="stylesheet" href="./lib/animsition/animsition.css">
@@ -49,21 +51,27 @@
         }
 
         .site-navbar {
-            display: none;
+            /* display: none; */
         }
 
         .site-menubar {
             top: 0px;
-            height: -webkit-calc(100% - 0px);
+            height: -webkit-calc(100% - 61px);
             height: 100%;
         }
 
         .site-menubar {
-            top: 0px;
+            top: 61px;
         }
 
         .site-contabs-open .site-contabs {
-            top: 0px;
+            top: 61px;
+        }
+
+        .site-page .page-container {
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 100px;
         }
     </style>
 
@@ -84,17 +92,21 @@
         Breakpoints();
     </script>
 </head>
+
 <body class="site-contabs-open">
     <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+            <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+                data-toggle="menubar">
                 <span class="sr-only">切换菜单</span> <span class="hamburger-bar"></span>
             </button>
-            <button type="button" class="navbar-toggle collapsed" data-target="#admui-navbarCollapse" data-toggle="collapse">
+            <button type="button" class="navbar-toggle collapsed" data-target="#admui-navbarCollapse"
+                data-toggle="collapse">
                 <i class="icon wb-more-horizontal" aria-hidden="true"></i>
             </button>
             <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-                <label class="navbar-brand-logo visible-lg visible-xs navbar-logo"><img src="img/logo.png">管理系统</label>
+                <label class="navbar-brand-logo visible-lg visible-xs navbar-logo"><img
+                        src="img/logo.png">火星管理系统</label>
                 <img class="navbar-brand-logo hidden-xs hidden-lg navbar-logo-mini" src="img/logo.png" />
             </div>
         </div>
@@ -102,7 +114,8 @@
             <div class="collapse navbar-collapse navbar-collapse-toolbar" id="admui-navbarCollapse">
                 <ul class="nav navbar-toolbar navbar-left">
                     <li class="hidden-float">
-                        <a data-toggle="menubar" class="hidden-float" href="javascript:;" role="button" id="admui-toggleMenubar">
+                        <a data-toggle="menubar" class="hidden-float" href="javascript:;" role="button"
+                            id="admui-toggleMenubar">
                             <i class="icon hamburger hamburger-arrow-left">
                                 <span class="sr-only">切换目录</span>
                                 <span class="hamburger-bar"></span>
@@ -112,42 +125,50 @@
                     <li class="navbar-menu nav-tabs-horizontal nav-tabs-animate is-load" id="admui-navbar">
                         <ul class="nav navbar-toolbar nav-tabs" role="tablist">
                             <li role="presentation" class="active">
-                                <a data-toggle="tab" href="#admui-navTabsItem-0" aria-controls="admui-navTabsItem-0" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-0" aria-controls="admui-navTabsItem-0"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-library"></i> <span>UI 示例</span>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a data-toggle="tab" href="#admui-navTabsItem-1" aria-controls="admui-navTabsItem-1" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-1" aria-controls="admui-navTabsItem-1"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-desktop"></i> <span>页面示例</span>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a data-toggle="tab" href="#admui-navTabsItem-2" aria-controls="admui-navTabsItem-2" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-2" aria-controls="admui-navTabsItem-2"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-table"></i> <span>表格示例</span>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a data-toggle="tab" href="#admui-navTabsItem-3" aria-controls="admui-navTabsItem-3" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-3" aria-controls="admui-navTabsItem-3"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-order"></i> <span>表单示例</span>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a data-toggle="tab" href="#admui-navTabsItem-4" aria-controls="admui-navTabsItem-4" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-4" aria-controls="admui-navTabsItem-4"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-pie-chart"></i> <span>统计图表</span>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a data-toggle="tab" href="#admui-navTabsItem-5" aria-controls="admui-navTabsItem-5" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-5" aria-controls="admui-navTabsItem-5"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-menu"></i> <span>菜单示例</span>
                                 </a>
                             </li>
                             <li role="presentation">
-                                <a data-toggle="tab" href="#admui-navTabsItem-6" aria-controls="admui-navTabsItem-6" role="tab" aria-expanded="false">
+                                <a data-toggle="tab" href="#admui-navTabsItem-6" aria-controls="admui-navTabsItem-6"
+                                    role="tab" aria-expanded="false">
                                     <i class="icon wb-settings"></i> <span>系统管理</span>
                                 </a>
                             </li>
                             <li class="dropdown" id="admui-navbarSubMenu">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" data-animation="slide-bottom" aria-expanded="true" role="button">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"
+                                    data-animation="slide-bottom" aria-expanded="true" role="button">
                                     <i class="icon wb-more-vertical"></i>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
@@ -157,7 +178,8 @@
                                         </a>
                                     </li>
                                     <li class="no-menu" role="presentation">
-                                        <a href="./page/system/menu/index.html" target="_blank" data-iframe role="menuitem">
+                                        <a href="./page/system/menu/index.html" target="_blank" data-iframe
+                                            role="menuitem">
                                             <i class="icon wb-wrench"></i><span>菜单管理</span>
                                         </a>
                                     </li>
@@ -168,7 +190,8 @@
                 </ul>
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
                     <li class="dropdown" id="admui-navbarMessage">
-                        <a data-toggle="dropdown" href="javascript:;" class="msg-btn" aria-expanded="false" data-animation="scale-up" role="button">
+                        <a data-toggle="dropdown" href="javascript:;" class="msg-btn" aria-expanded="false"
+                            data-animation="scale-up" role="button">
                             <i class="icon wb-bell" aria-hidden="true"></i>
                             <span class="badge badge-danger up msg-num"></span>
                         </a>
@@ -178,7 +201,8 @@
                                 <span class="label label-round label-danger"></span>
                             </li>
                             <li class="list-group" role="presentation">
-                                <div class="navbar-message-content" id="admui-messageContent" data-height="220px" data-plugin="slimScroll"></div>
+                                <div class="navbar-message-content" id="admui-messageContent" data-height="220px"
+                                    data-plugin="slimScroll"></div>
                                 <script type="text/html" id="admui-messageTpl">
                                     {{if msgList.length < 1}}
                                     <p class="text-center height-200 vertical-align">
@@ -186,10 +210,12 @@
                                     </p>
                                     {{else}}
                                     {{each msgList}}
-                                    <a class="list-group-item" href="#" data-message-id="{{$value.messageId}}" data-title="{{$value.title}}" data-content="{{$value.content}}" role="menuitem">
+                                    <a class="list-group-item" href="#" data-message-id="{{$value.messageId}}"
+                                        data-title="{{$value.title}}" data-content="{{$value.content}}" role="menuitem">
                                         <div class="media">
                                             <div class="media-left padding-right-10">
-                                                <i class="icon {{$value.type | iconType}} white icon-circle" aria-hidden="true"></i>
+                                                <i class="icon {{$value.type | iconType}} white icon-circle"
+                                                    aria-hidden="true"></i>
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="media-heading">{{$value.title}}</h6>
@@ -209,18 +235,22 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="hidden-xs" id="admui-navbarDisplay" data-toggle="tooltip" data-placement="bottom" title="设置主题与布局等">
-                        <a class="icon wb-layout" href="./page/system/settings/display.html" data-iframe target="_blank">
+                    <li class="hidden-xs" id="admui-navbarDisplay" data-toggle="tooltip" data-placement="bottom"
+                        title="设置主题与布局等">
+                        <a class="icon wb-layout" href="./page/system/settings/display.html" data-iframe
+                            target="_blank">
                             <span class="sr-only">主题与布局</span>
                         </a>
                     </li>
-                    <li class="hidden-xs" id="admui-navbarFullscreen" data-toggle="tooltip" data-placement="bottom" title="全屏">
+                    <li class="hidden-xs" id="admui-navbarFullscreen" data-toggle="tooltip" data-placement="bottom"
+                        title="全屏">
                         <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
                             <span class="sr-only">全屏</span>
                         </a>
                     </li>
                     <li>
-                        <a class="icon fa-sign-out" id="admui-signOut" data-ctx="" data-user="5" href="login.html" role="button">
+                        <a class="icon fa-sign-out" id="admui-signOut" data-ctx="" data-user="5" href="login.html"
+                            role="button">
                             <span class="sr-only">退出</span>
                         </a>
                     </li>
@@ -231,12 +261,13 @@
     <nav class="site-menubar" id="admui-siteMenubar">
         <div class="site-menubar-body">
             <div class="tab-content height-full" id="admui-navTabs">
-                <div class="tab-pane animation-fade height-full active" id="admui-navTabsItem-0" role="tabpanel">
+                <div class="tab-pane animation-fade height-full" id="admui-navTabsItem-0" role="tabpanel">
                     <ul class="site-menu">
                         <li class="site-menu-category">UI 示例</li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i><span class="site-menu-title">布局</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i><span
+                                    class="site-menu-title">布局</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item has-sub">
@@ -245,12 +276,14 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/layouts/grids.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/layouts/grids.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">基本栅格</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/layouts/layout-grid.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/layouts/layout-grid.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">布局栅格</span>
                                             </a>
                                         </li>
@@ -262,19 +295,22 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/layouts/headers.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/layouts/headers.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">普通</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/layouts/bordered-header.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/layouts/bordered-header.html"
+                                                data-iframe target="_blank">
                                                 <span class="site-menu-title">带边框</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/layouts/panel-transition.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/layouts/panel-transition.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">面板动画</span>
                                     </a>
                                 </li>
@@ -284,12 +320,14 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/layouts/page-aside.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/layouts/page-aside.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">侧边栏</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/layouts/two-columns.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/layouts/two-columns.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">两栏式布局</span>
                                     </a>
                                 </li>
@@ -297,7 +335,8 @@
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-cube" aria-hidden="true"></i><span class="site-menu-title">基本</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-cube" aria-hidden="true"></i><span
+                                    class="site-menu-title">基本</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item has-sub">
@@ -306,17 +345,20 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/basic/panel/structure.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/basic/panel/structure.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">面板结构</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/basic/panel/actions.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/basic/panel/actions.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">面板操作</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/basic/panel/portlets.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/basic/panel/portlets.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">面板组件</span>
                                             </a>
                                         </li>
@@ -333,7 +375,8 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/dropdowns.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/dropdowns.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">下拉菜单</span>
                                     </a>
                                 </li>
@@ -343,7 +386,8 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/tooltip-popover.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/tooltip-popover.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">气泡提示 &amp; 弹出框</span>
                                     </a>
                                 </li>
@@ -353,7 +397,8 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/tabs-accordions.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/tabs-accordions.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">选项卡 &amp; 折叠面板</span>
                                     </a>
                                 </li>
@@ -363,22 +408,26 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/badges-labels.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/badges-labels.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">徽章 &amp; 标签</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/carousel.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/carousel.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">轮播组件</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/typography.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/typography.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">排版</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/progress-bars.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/progress-bars.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">进度条</span>
                                     </a>
                                 </li>
@@ -388,7 +437,8 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/basic/utilities.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/basic/utilities.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">辅助类</span>
                                     </a>
                                 </li>
@@ -396,41 +446,49 @@
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-cubes" aria-hidden="true"></i><span class="site-menu-title">进阶</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-cubes" aria-hidden="true"></i><span
+                                    class="site-menu-title">进阶</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/animation.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/animation.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">动画</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/highlight.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/highlight.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">代码高亮</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/scrollbar.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/scrollbar.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">滚动条</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/rating.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/rating.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">评分</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/context-menu.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/context-menu.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">右键菜单</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/layer.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/layer.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">layer 弹层</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/masonry.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/masonry.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">瀑布流布局</span>
                                     </a>
                                 </li>
@@ -440,24 +498,28 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/advanced/tree/jstree.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/advanced/tree/jstree.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">JsTree</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/advanced/tree/treeview.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/advanced/tree/treeview.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">Treeview</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/toastr.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/toastr.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">Toastr 通知</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/advanced/sortable-nestable.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/advanced/sortable-nestable.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">拖动排序</span>
                                     </a>
                                 </li>
@@ -465,31 +527,37 @@
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-plug" aria-hidden="true"></i><span class="site-menu-title">组件</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-plug" aria-hidden="true"></i><span
+                                    class="site-menu-title">组件</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/alerts.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/alerts.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">警告框</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/ribbon.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/ribbon.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">彩带</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/pricing-tables.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/pricing-tables.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">价目表</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/overlay.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/overlay.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">遮罩</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/cover.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/cover.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">覆盖层</span>
                                     </a>
                                 </li>
@@ -499,39 +567,46 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/structure/timeline/simple.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/structure/timeline/simple.html"
+                                                data-iframe target="_blank">
                                                 <span class="site-menu-title">简单时间轴</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/components/structure/timeline/icons.html" data-iframe target="_blank">
+                                            <a href="./page/examples/components/structure/timeline/icons.html"
+                                                data-iframe target="_blank">
                                                 <span class="site-menu-title">图标时间轴</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/step.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/step.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">步骤条</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/comments.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/comments.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">评论</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/media.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/media.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">媒体</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/chat.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/chat.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">聊天窗口</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/testimonials.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/testimonials.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">客户评价</span>
                                     </a>
                                 </li>
@@ -541,22 +616,26 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/navbars.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/navbars.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">导航条</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/blockquotes.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/blockquotes.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">引用</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/pagination.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/pagination.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">分页</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/structure/breadcrumbs.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/structure/breadcrumbs.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">包屑导航</span>
                                     </a>
                                 </li>
@@ -564,11 +643,13 @@
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-puzzle-piece" aria-hidden="true"></i><span class="site-menu-title">小工具</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-puzzle-piece" aria-hidden="true"></i><span
+                                    class="site-menu-title">小工具</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/widgets/statistics.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/widgets/statistics.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">统计</span>
                                     </a>
                                 </li>
@@ -588,12 +669,14 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/widgets/social.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/widgets/social.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">社交</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/components/widgets/weather.html" data-iframe target="_blank">
+                                    <a href="./page/examples/components/widgets/weather.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">天气</span>
                                     </a>
                                 </li>
@@ -606,7 +689,8 @@
                         <li class="site-menu-category">页面示例</li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-home" aria-hidden="true"></i><span class="site-menu-title">首页示例</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-home" aria-hidden="true"></i><span
+                                    class="site-menu-title">首页示例</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
@@ -638,7 +722,8 @@
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-files-o" aria-hidden="true"></i><span class="site-menu-title">常用页面</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-files-o" aria-hidden="true"></i><span
+                                    class="site-menu-title">常用页面</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
@@ -652,12 +737,14 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/pages/general/gallery-grid.html" data-iframe target="_blank">
+                                    <a href="./page/examples/pages/general/gallery-grid.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">相册</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/pages/general/search-result.html" data-iframe target="_blank">
+                                    <a href="./page/examples/pages/general/search-result.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">搜索</span>
                                     </a>
                                 </li>
@@ -672,7 +759,8 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/pages/general/code-editor.html" data-iframe target="_blank">
+                                    <a href="./page/examples/pages/general/code-editor.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">代码编辑器</span>
                                     </a>
                                 </li>
@@ -700,11 +788,13 @@
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-group" aria-hidden="true"></i><span class="site-menu-title">团队协作</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-group" aria-hidden="true"></i><span
+                                    class="site-menu-title">团队协作</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/pages/team/calendar/index.html" data-iframe target="_blank">
+                                    <a href="./page/examples/pages/team/calendar/index.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">日历</span>
                                     </a>
                                 </li>
@@ -724,17 +814,20 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/pages/team/documents/articles.html" data-iframe target="_blank">
+                                            <a href="./page/examples/pages/team/documents/articles.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">列表</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/pages/team/documents/categories.html" data-iframe target="_blank">
+                                            <a href="./page/examples/pages/team/documents/categories.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">分类</span>
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/pages/team/documents/article.html" data-iframe target="_blank">
+                                            <a href="./page/examples/pages/team/documents/article.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">详情</span>
                                             </a>
                                         </li>
@@ -766,7 +859,8 @@
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li class="site-menu-item">
-                                            <a href="./page/examples/pages/team/projects/index.html" data-iframe target="_blank">
+                                            <a href="./page/examples/pages/team/projects/index.html" data-iframe
+                                                target="_blank">
                                                 <span class="site-menu-title">项目列表 01</span>
                                             </a>
                                         </li>
@@ -786,56 +880,67 @@
                         <li class="site-menu-category">表格示例</li>
                         <li class="site-menu-item">
                             <a href="./page/examples/tables/basic/index.html" data-iframe target="_blank">
-                                <i class="site-menu-icon fa-table" aria-hidden="true"></i><span class="site-menu-title">基本表格</span>
+                                <i class="site-menu-icon fa-table" aria-hidden="true"></i><span
+                                    class="site-menu-title">基本表格</span>
                             </a>
                         </li>
                         <li class="site-menu-item">
                             <a href="./page/examples/tables/treegrid/index.html" data-iframe target="_blank">
-                                <i class="site-menu-icon fa-sort-amount-asc" aria-hidden="true"></i><span class="site-menu-title">树形表格</span>
+                                <i class="site-menu-icon fa-sort-amount-asc" aria-hidden="true"></i><span
+                                    class="site-menu-title">树形表格</span>
                             </a>
                         </li>
                         <li class="site-menu-item has-sub">
                             <a href="javascript:;">
-                                <i class="site-menu-icon fa-list-alt" aria-hidden="true"></i><span class="site-menu-title">DataTables</span><span class="site-menu-arrow"></span>
+                                <i class="site-menu-icon fa-list-alt" aria-hidden="true"></i><span
+                                    class="site-menu-title">DataTables</span><span class="site-menu-arrow"></span>
                             </a>
                             <ul class="site-menu-sub">
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/basic-init/zero-configuration.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/basic-init/zero-configuration.html"
+                                        data-iframe target="_blank">
                                         <span class="site-menu-title">基本初始化</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/advanced-init/events-live.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/advanced-init/events-live.html"
+                                        data-iframe target="_blank">
                                         <span class="site-menu-title">高级初始化</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/data-sources/dom.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/data-sources/dom.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">数据源</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/api/add-row.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/api/add-row.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">API</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/ajax/simple.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/ajax/simple.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">AJAX</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/server-side/simple.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/server-side/simple.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">服务器模式</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/plug-ins/api.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/plug-ins/api.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">插件</span>
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="./page/examples/tables/data-tables/others/fixed-header.html" data-iframe target="_blank">
+                                    <a href="./page/examples/tables/data-tables/others/fixed-header.html" data-iframe
+                                        target="_blank">
                                         <span class="site-menu-title">其他</span>
                                     </a>
                                 </li>
@@ -849,56 +954,67 @@
                             <li class="site-menu-category">表单相关</li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/general.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-circle-o" aria-hidden="true"></i><span class="site-menu-title">基本表单</span>
+                                    <i class="site-menu-icon fa-circle-o" aria-hidden="true"></i><span
+                                        class="site-menu-title">基本表单</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/material.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-google" aria-hidden="true"></i><span class="site-menu-title">质感风格</span>
+                                    <i class="site-menu-icon fa-google" aria-hidden="true"></i><span
+                                        class="site-menu-title">质感风格</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/advanced.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-toggle-off" aria-hidden="true"></i><span class="site-menu-title">高级表单</span>
+                                    <i class="site-menu-icon fa-toggle-off" aria-hidden="true"></i><span
+                                        class="site-menu-title">高级表单</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/layouts.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-indent" aria-hidden="true"></i><span class="site-menu-title">表单布局</span>
+                                    <i class="site-menu-icon fa-indent" aria-hidden="true"></i><span
+                                        class="site-menu-title">表单布局</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/wizard.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-arrow-right" aria-hidden="true"></i><span class="site-menu-title">表单向导</span>
+                                    <i class="site-menu-icon fa-arrow-right" aria-hidden="true"></i><span
+                                        class="site-menu-title">表单向导</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/validation.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-check-square-o" aria-hidden="true"></i><span class="site-menu-title">表单验证</span>
+                                    <i class="site-menu-icon fa-check-square-o" aria-hidden="true"></i><span
+                                        class="site-menu-title">表单验证</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/masks.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-at" aria-hidden="true"></i><span class="site-menu-title">格式预设</span>
+                                    <i class="site-menu-icon fa-at" aria-hidden="true"></i><span
+                                        class="site-menu-title">格式预设</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/editable.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-edit" aria-hidden="true"></i><span class="site-menu-title">表单编辑</span>
+                                    <i class="site-menu-icon fa-edit" aria-hidden="true"></i><span
+                                        class="site-menu-title">表单编辑</span>
                                 </a>
                             </li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
-                                    <i class="site-menu-icon fa-list-alt" aria-hidden="true"></i><span class="site-menu-title">编辑器</span><span class="site-menu-arrow"></span>
+                                    <i class="site-menu-icon fa-list-alt" aria-hidden="true"></i><span
+                                        class="site-menu-title">编辑器</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item">
-                                        <a href="./page/examples/forms/editor/summernote.html" data-iframe target="_blank">
+                                        <a href="./page/examples/forms/editor/summernote.html" data-iframe
+                                            target="_blank">
                                             <span class="site-menu-title">文本编辑器</span>
                                         </a>
                                     </li>
                                     <li class="site-menu-item">
-                                        <a href="./page/examples/forms/editor/markdown.html" data-iframe target="_blank">
+                                        <a href="./page/examples/forms/editor/markdown.html" data-iframe
+                                            target="_blank">
                                             <span class="site-menu-title">Markdown编辑器</span>
                                         </a>
                                     </li>
@@ -911,12 +1027,14 @@
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/image-cropping.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-cut" aria-hidden="true"></i><span class="site-menu-title">图片裁剪</span>
+                                    <i class="site-menu-icon fa-cut" aria-hidden="true"></i><span
+                                        class="site-menu-title">图片裁剪</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/forms/dropify.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-cloud-upload" aria-hidden="true"></i><span class="site-menu-title">文件上传</span>
+                                    <i class="site-menu-icon fa-cloud-upload" aria-hidden="true"></i><span
+                                        class="site-menu-title">文件上传</span>
                                 </a>
                             </li>
                         </ul>
@@ -928,7 +1046,8 @@
                             <li class="site-menu-category">统计图表</li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
-                                    <i class="site-menu-icon fa-pie-chart" aria-hidden="true"></i><span class="site-menu-title">简单图表</span><span class="site-menu-arrow"></span>
+                                    <i class="site-menu-icon fa-pie-chart" aria-hidden="true"></i><span
+                                        class="site-menu-title">简单图表</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item">
@@ -980,7 +1099,8 @@
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/charts/echarts.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-area-chart" aria-hidden="true"></i><span class="site-menu-title">百度 Echarts</span>
+                                    <i class="site-menu-icon fa-area-chart" aria-hidden="true"></i><span
+                                        class="site-menu-title">百度 Echarts</span>
                                 </a>
                             </li>
                         </ul>
@@ -992,7 +1112,8 @@
                             <li class="site-menu-category">菜单演示 01</li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
-                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span class="site-menu-title">一级菜单</span><span class="site-menu-arrow"></span>
+                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span
+                                        class="site-menu-title">一级菜单</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item">
@@ -1007,7 +1128,8 @@
                                     </li>
                                     <li class="site-menu-item has-sub">
                                         <a href="javascript:;">
-                                            <span class="site-menu-title">二级菜单 03</span><span class="site-menu-arrow"></span>
+                                            <span class="site-menu-title">二级菜单 03</span><span
+                                                class="site-menu-arrow"></span>
                                         </a>
                                         <ul class="site-menu-sub">
                                             <li class="site-menu-item">
@@ -1031,45 +1153,52 @@
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/menu.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span class="site-menu-title">独立菜单</span>
+                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span
+                                        class="site-menu-title">独立菜单</span>
                                 </a>
                             </li>
                             <li class="site-menu-category">菜单演示 02</li>
                             <li class="site-menu-item">
                                 <a href="./page/examples/menu.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span class="site-menu-title">独立菜单</span>
+                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span
+                                        class="site-menu-title">独立菜单</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="tab-pane animation-fade height-full" id="admui-navTabsItem-6" role="tabpanel">
+                <div class="tab-pane animation-fade height-full active" id="admui-navTabsItem-6" role="tabpanel">
                     <div>
                         <ul class="site-menu">
                             <li class="site-menu-category">系统信息</li>
                             <li class="site-menu-item">
                                 <a href="./page/system/menu/index.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span class="site-menu-title">菜单管理</span>
+                                    <i class="site-menu-icon fa-bars" aria-hidden="true"></i><span
+                                        class="site-menu-title">菜单管理</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/system/user/index.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-street-view" aria-hidden="true"></i><span class="site-menu-title">用户管理</span>
+                                    <i class="site-menu-icon fa-street-view" aria-hidden="true"></i><span
+                                        class="site-menu-title">用户管理</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/system/log.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-file-text-o" aria-hidden="true"></i><span class="site-menu-title">日志信息</span>
+                                    <i class="site-menu-icon fa-file-text-o" aria-hidden="true"></i><span
+                                        class="site-menu-title">日志信息</span>
                                 </a>
                             </li>
                             <li class="site-menu-item">
                                 <a href="./page/system/blacklist.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-shield" aria-hidden="true"></i><span class="site-menu-title">黑名单</span>
+                                    <i class="site-menu-icon fa-shield" aria-hidden="true"></i><span
+                                        class="site-menu-title">黑名单</span>
                                 </a>
                             </li>
                             <li class="site-menu-item has-sub">
                                 <a href="javascript:;">
-                                    <i class="site-menu-icon fa-gear" aria-hidden="true"></i><span class="site-menu-title">系统设置</span><span class="site-menu-arrow"></span>
+                                    <i class="site-menu-icon fa-gear" aria-hidden="true"></i><span
+                                        class="site-menu-title">系统设置</span><span class="site-menu-arrow"></span>
                                 </a>
                                 <ul class="site-menu-sub">
                                     <li class="site-menu-item">
@@ -1087,7 +1216,8 @@
                             <li class="site-menu-category">我的账户</li>
                             <li class="site-menu-item">
                                 <a href="./page/system/account.html" data-iframe target="_blank">
-                                    <i class="site-menu-icon fa-key" aria-hidden="true"></i><span class="site-menu-title">账户信息</span>
+                                    <i class="site-menu-icon fa-key" aria-hidden="true"></i><span
+                                        class="site-menu-title">账户信息</span>
                                 </a>
                             </li>
                         </ul>
@@ -1111,7 +1241,8 @@
             <button type="button" class="btn btn-icon btn-default hide">
                 <i class="icon fa-angle-double-right"></i>
             </button>
-            <button type="button" class="btn btn-default dropdown-toggle btn-outline" data-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-default dropdown-toggle btn-outline" data-toggle="dropdown"
+                aria-expanded="false">
                 <span class="caret"></span> <span class="sr-only">切换菜单</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="conTabsDropdown" role="menu">
@@ -1135,7 +1266,7 @@
             <div class="page-loader loader-default loader vertical-align-middle" data-type="default"></div>
         </div>
     </main>
-    <footer class="site-footer"> </footer>
+    <!--<footer class="site-footer"> </footer>-->
     <!-- 插件 -->
     <script src="./lib/ashoverscroll/jquery-asHoverScroll.min.js"></script>
     <script src="./lib/slimscroll/jquery.slimscroll.min.js"></script>
@@ -1151,4 +1282,5 @@
     <!-- 消息通知 -->
     <script src="./js/notify-msg.js"></script>
 </body>
+
 </html>

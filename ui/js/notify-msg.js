@@ -28,10 +28,11 @@
 
             socket.onmessage = function (event) {
                 var fn, allMsg, msgFn, msgNumber,
-                    notifyFn = $.content.window().notifyFn, unReadFn,
+                    notifyFn = $.content.window().notifyFn,
+                    unReadFn,
                     data = JSON.parse(event.data);
 
-                if (typeof  notifyFn !== 'undefined') {
+                if (typeof notifyFn !== 'undefined') {
                     unReadFn = notifyFn.unReadMsg;
                     fn = notifyFn.messagePage;
                     msgFn = notifyFn.messageNum;
@@ -117,11 +118,14 @@
             $.ajax({
                 url: $.ctx + '/message/read',
                 type: 'POST',
-                data: {messageId: opts.messageId},
+                data: {
+                    messageId: opts.messageId
+                },
                 dataType: 'JSON',
                 success: function (data) {
                     var msgNumber,
-                        notifyFn = $.content.window().notifyFn, fn, msgFn;
+                        notifyFn = $.content.window().notifyFn,
+                        fn, msgFn;
 
                     if (typeof notifyFn !== 'undefined') {
                         fn = notifyFn.msgStatus;
