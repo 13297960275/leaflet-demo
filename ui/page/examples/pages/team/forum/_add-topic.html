@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+
+<head>
+    <title>发布新帖子</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="Muyao">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../img/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../img/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Muyao">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../img/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../img/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='/ie.html'"/>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <script src="../../../../../lib/media-match/media.match.min.js"></script>
+    <script src="../../../../../lib/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 样式 -->
+    <link rel="stylesheet" href="../../../../../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../../../../lib/admui/css/site.css" id="admui-siteStyle">
+
+    <!-- 图标 CSS-->
+    <link rel="stylesheet" href="../../../../../lib/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../../lib/fonts/web-icons/web-icons.css">
+
+    <link rel="stylesheet" href="../../../../../lib/bootstrap/bootstrap-markdown/bootstrap-markdown.css">
+    <link rel="stylesheet" href="../../../../../lib/bootstrap/bootstrap-select/bootstrap-select.css">
+
+    <script src="../../../../../lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../../../../lib/bootstrap/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+    <h4 class="modal-title">发布新帖子</h4>
+</div>
+<div class="modal-body container-fluid">
+    <form>
+        <div class="form-group">
+            <label class="control-label margin-bottom-15" for="topicTitle">帖子主题：</label>
+            <input type="text" class="form-control" id="topicTitle" name="title" placeholder="填写标题...">
+        </div>
+        <div class="form-group">
+            <textarea name="content" class="markdown-edit" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-6">
+                    <label class="control-label margin-bottom-15" for="topicCategory">帖子标签</label>
+                    <select id="topicCategory" data-plugin="selectpicker">
+                        <option>PHP</option>
+                        <option>Javascript</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Ruby</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <label class="control-label margin-bottom-15" for="topic_tags">推荐标签：</label>
+                    <select id="topic_tags" data-plugin="selectpicker">
+                        <option>PHP</option>
+                        <option>Javascript</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Ruby</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer text-left">
+    <button class="btn btn-primary" data-dismiss="modal" type="submit">创建</button>
+    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+</div>
+
+<script src="../../../../../lib/bootstrap/bootstrap-markdown/bootstrap-markdown.min.js"></script>
+<script src="../../../../../lib/bootstrap/bootstrap-markdown/locale/bootstrap-markdown.zh.js"></script>
+<script src="../../../../../lib/bootstrap/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../../lib/marked/marked.min.js"></script>
+<script src="../../../../../lib/to-markdown/to-markdown.min.js"></script>
+<script src="../../../../../lib/admui/js/app.js"></script>
+<script src="../../../../../js/examples/pages/team/forum/add-topic.js"></script>
+</body>
+
+</html>
