@@ -51,7 +51,7 @@ function loadExampleHtml() {
     if (i = i + e + window.location.search) {
       var n = ""; - 1 == i.indexOf("?") ? i += "?time=" + n : -1 == i.indexOf("time=" + n) && (i += "&time=" + n);
       var a = haoutil.system.getRequestByName("widget");
-      if (null != a) $("#showCodeBtn").hide(), loadIFrameForSrc("http://marsgis.cn/project/2d/jcxm/index.html?widget=" + a);
+      if (null != a) $("#showCodeBtn").hide(), loadIFrameForSrc("../widgets.html?widget=" + a);
       else {
         console.log("加载示例页面：" + i);
         var o = $.ajax({

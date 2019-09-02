@@ -1,0 +1,2 @@
+/* 2019-6-7 11:12:22 | 版权所有 火星科技 http://marsgis.cn */
+function bindEvents(){var t=$(window),o=$(document.body);o.scrollspy({target:".icl-docs-sidebar"}),t.on("load",function(){o.scrollspy("refresh")}),$('.icl-docs-container [href="#"]').click(function(t){t.preventDefault()}),setTimeout(function(){var o=$(".icl-docs-sidebar");o.affix({offset:{top:function(){var t=o.offset().top;return this.top=t},bottom:function(){return this.bottom=$(".icl-docs-footer").outerHeight(!0)}}})},100)}$(function(){bindEvents()});
