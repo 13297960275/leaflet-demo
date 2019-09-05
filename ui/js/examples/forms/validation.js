@@ -1,13 +1,4 @@
-/**
- * UI v1.1.0
- * Copyright 2017-2018 Muyao
- * Licensed under the Muyao License 1.0 
- */
-/**
- * UI v1.0.0
- * Copyright 2015-2017 Muyao
- * Licensed under the Muyao License 1.0 
- */
+
 (function (document, window, $) {
     'use strict';
 

@@ -49,11 +49,11 @@ function loadExampleHtml() {
     var t = window.location.pathname,
       i = t.substr(0, t.lastIndexOf("/") + 1);
     if (i = i + e + window.location.search) {
-      var n = ""; - 1 == i.indexOf("?") ? i += "?time=" + n : -1 == i.indexOf("time=" + n) && (i += "&time=" + n);
+      // var n = ""; - 1 == i.indexOf("?") ? i += "?time=" + n : -1 == i.indexOf("time=" + n) && (i += "&time=" + n);
       var a = haoutil.system.getRequestByName("widget");
       if (null != a) $("#showCodeBtn").hide(), loadIFrameForSrc("../widgets.html?widget=" + a);
       else {
-        console.log("加载示例页面：" + i);
+        // console.log("加载示例页面：" + i);
         var o = $.ajax({
           url: i,
           async: !1,

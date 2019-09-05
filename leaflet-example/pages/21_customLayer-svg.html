@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1"><meta name="author" content=" "><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="x5-fullscreen" content="true"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Leaflet地图</title><script src="../lib/include-lib.js" libpath="../lib/" include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet"></script><link href="css/style.css" rel="stylesheet"><style>.leaflet-ant-path{fill:none;animation:linear infinite leaflet-ant-path-animation}@keyframes leaflet-ant-path-animation{from{stroke-dashoffset:100%}to{stroke-dashoffset:0}}</style></head><body><div id="map" class="map"></div><script src="../lib/leafletPlugins/_vector/Leaflet.CustomLayer.js"></script><script>$(document).ready(function () {
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1"><meta name="author" content=" "><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="x5-fullscreen" content="true"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Leaflet地图</title><script src="../lib/include-lib.js" libpath="../lib/" include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-src,esri-leaflet"></script><link href="css/style.css" rel="stylesheet"><style>.leaflet-ant-path{fill:none;animation:linear infinite leaflet-ant-path-animation}@keyframes leaflet-ant-path-animation{from{stroke-dashoffset:100%}to{stroke-dashoffset:0}}</style></head><body><div id="map" class="map"></div><script src="../lib/leafletPlugins/_vector/Leaflet.CustomLayer.js"></script><script>$(document).ready(function () {
   initMap();
 });
 
@@ -8,7 +8,7 @@ var map;
 function initMap() {
   var configfile = haoutil.system.getRequestByName("config", "config/gcj.json");
 
-  L.mars.createMap({
+  L.src.createMap({
       id: "map",
       url: configfile,
       success: function (_map, gisdata) {

@@ -3,7 +3,7 @@ var map;
 function initMap() {
   var r = haoutil.system.getRequest(),
     a = "config/config.json";
-  r.config && (a = r.config), haoutil.loading.show(), L.mars.createMap({
+  r.config && (a = r.config), haoutil.loading.show(), L.src.createMap({
     id: "map",
     url: a + "",
     layerToMap: layerToMap,

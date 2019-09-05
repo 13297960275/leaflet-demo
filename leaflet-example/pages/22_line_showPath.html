@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <title>Leaflet地图</title>
   <script src="../lib/include-lib.js" libpath="../lib/"
-    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet,turf"></script>
+    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-src,esri-leaflet,turf"></script>
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -29,7 +29,7 @@
 
     function initMap() {
       var e = haoutil.system.getRequestByName("config", "config/gcj.json");
-      L.mars.createMap({
+      L.src.createMap({
         id: "map",
         url: e,
         success: function (e, n) {

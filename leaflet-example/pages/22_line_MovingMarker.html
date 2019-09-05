@@ -13,7 +13,7 @@
   <title>Leaflet地图</title>
   <link href="css/style.css" rel="stylesheet">
   <script src="../lib/include-lib.js" libpath="../lib/"
-    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-mars,esri-leaflet"></script>
+    include="jquery,font-awesome,bootstrap,layer,haoutil,leaflet-src,esri-leaflet"></script>
   <script src="../lib/leafletPlugins/line/MovingMarker.js"></script>
 </head>
 
@@ -24,7 +24,7 @@
 
     function initMap() {
       var o = haoutil.system.getRequestByName("config", "config/gcj.json");
-      L.mars.createMap({
+      L.src.createMap({
         id: "map",
         url: o,
         success: function (o, a) {

@@ -3,7 +3,7 @@
 function initView() {
   var t;
   setStyleByTheme(), new Slider(function () {
-    console.log("滑块验证通过"), $(".drag_text").html("验证通过"), t = "muyao"
+    console.log("滑块验证通过"), $(".drag_text").html("验证通过"), t = "ui"
   }), $("#btnLogin").click(function () {
     null != t ? location.href = "index.html" : layer.tips("请先拖动滑动验证通过后再登录", "#slider")
   })
