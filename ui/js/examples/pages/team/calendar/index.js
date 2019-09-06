@@ -146,19 +146,19 @@
             $('#addNewCalendar').modal({
                 show: false,
                 pageHeight: 340,
-                page: $.ctx + '/examples/pages/team/calendar/_add-calendar.html'
+                page: $.ctx + '/page/examples/pages/team/calendar/_add-calendar.html'
             });
 
             $('#addNewEvent').modal({
                 show: false,
                 pageHeight: 560,
-                page: $.ctx + '/examples/pages/team/calendar/_add-event.html'
+                page: $.ctx + '/page/examples/pages/team/calendar/_add-event.html'
             });
 
             $('#editNewEvent').modal({
                 show: false,
                 pageHeight: 560,
-                page: $.ctx + '/examples/pages/team/calendar/_edit-event.html'
+                page: $.ctx + '/page/examples/pages/team/calendar/_edit-event.html'
             });
 
             this.handleFullcalendar();

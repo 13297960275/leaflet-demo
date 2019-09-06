@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+
+<head>
+    <title>新增日历</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../img/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../img/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../img/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../img/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='/ie.html'"/>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <script src="../../../../../lib/media-match/media.match.min.js"></script>
+    <script src="../../../../../lib/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 样式 -->
+    <link rel="stylesheet" href="../../../../../lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../../../../../lib/admui/css/site.css" id="admui-siteStyle">
+
+    <!-- 图标 CSS-->
+    <link rel="stylesheet" href="../../../../../lib/fonts/web-icons/web-icons.css">
+
+    <link rel="stylesheet" href="../../../../../lib/jquery/jquery-selective/jquery-selective.css">
+
+    <script src="../../../../../lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../../../../lib/bootstrap/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-white">
+
+<form class="form-horizontal" action="#" method="post" role="form">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+            ×
+        </button>
+        <h4 class="modal-title">
+            新增日历</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="ename">名称：</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ename" name="ename">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">标记：</label>
+            <div class="col-sm-10">
+                <ul class="color-selector">
+                    <li class="bg-blue-600">
+                        <input type="radio" checked name="colorChosen" id="colorChosen2">
+                        <label for="colorChosen2"></label>
+                    </li>
+                    <li class="bg-green-600">
+                        <input type="radio" name="colorChosen" id="colorChosen3">
+                        <label for="colorChosen3"></label>
+                    </li>
+                    <li class="bg-cyan-600">
+                        <input type="radio" name="colorChosen" id="colorChosen4">
+                        <label for="colorChosen4"></label>
+                    </li>
+                    <li class="bg-orange-600">
+                        <input type="radio" name="colorChosen" id="colorChosen5">
+                        <label for="colorChosen5"></label>
+                    </li>
+                    <li class="bg-red-600">
+                        <input type="radio" name="colorChosen" id="colorChosen6">
+                        <label for="colorChosen6"></label>
+                    </li>
+                    <li class="bg-blue-grey-600">
+                        <input type="radio" name="colorChosen" id="colorChosen7">
+                        <label for="colorChosen7"></label>
+                    </li>
+                    <li class="bg-purple-600">
+                        <input type="radio" name="colorChosen" id="colorChosen8">
+                        <label for="colorChosen8"></label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="people">人员</label>
+            <div class="col-sm-10">
+                <select id="people" multiple="multiple" data-plugin="jquery-selective"></select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="form-actions">
+            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                新增事件
+            </button>
+            <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+        </div>
+    </div>
+</form>
+
+<script src="../../../../../lib/jquery/jquery-selective/jquery-selective.min.js"></script>
+<script src="../../../../../lib/admui/js/app.js"></script>
+<script src="../../../../../js/examples/pages/team/calendar/common.js"></script>
+<script src="../../../../../js/examples/pages/team/calendar/add-calendar.js"></script>
+</body>
+
+</html>

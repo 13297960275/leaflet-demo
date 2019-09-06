@@ -215,7 +215,7 @@
             $('#addMailForm').modal({
                 show: false,
                 pageHeight: 540,
-                page: $.ctx + '/examples/pages/team/mailbox/_add-mail.html'
+                page: $.ctx + '/page/examples/pages/team/mailbox/_add-mail.html'
             });
 
             $(document).on('click', '.checkbox-important', function (e) {
