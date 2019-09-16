@@ -197,10 +197,10 @@
                 parentEtx = $parentLink.prop('href').indexOf('?v=') === -1 ? '' : '.min';
 
             if (val === 'primary') {
-                parentHref = this.path + '/css/index' + parentEtx + '.css';
+                parentHref = this.path + 'css/index' + parentEtx + '.css';
             }
             else {
-                parentHref = this.path + '/skins/' + val + '/index' + parentEtx + '.css';
+                parentHref = this.path + 'skins/' + val + '/index' + parentEtx + '.css';
             }
 
             $parentLink.attr('href', parentHref);
@@ -213,10 +213,10 @@
                 if ($that.length) {
                     iframeEtx = $that.prop('href').indexOf('?v=') === -1 ? '' : '.min';
                     if (val === 'primary') {
-                        iframeHref = self.path + '/css/site' + iframeEtx + '.css';
+                        iframeHref = self.path + 'css/site' + iframeEtx + '.css';
                     }
                     else {
-                        iframeHref = self.path + '/skins/' + val + '/site' + iframeEtx + '.css';
+                        iframeHref = self.path + 'skins/' + val + '/site' + iframeEtx + '.css';
                     }
 
                     $that.attr('href', iframeHref);
