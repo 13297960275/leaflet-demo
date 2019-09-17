@@ -107,13 +107,13 @@
             $addModal.modal({
                 show: false,
                 pageHeight: 370,
-                page: $.ctx + '/examples/pages/home/team/_add-todo.html'
+                page: $.ctx + '/page/examples/pages/home/team/_add-todo.html'
             });
 
             $editMdal.modal({
                 show: false,
                 pageHeight: 370,
-                page: $.ctx + '/examples/pages/home/team/_edit-todo.html'
+                page: $.ctx + '/page/examples/pages/home/team/_edit-todo.html'
             });
 
             this.waitingThing();

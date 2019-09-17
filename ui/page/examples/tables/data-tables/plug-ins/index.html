@@ -108,6 +108,18 @@
 <script src="../../../../../lib/highlight/highlight.pack.min.js"></script>
 <script src="../../../../../lib/admui/js/app.js"></script>
 <script src="../../../../../js/examples/tables/data-tables/common.js"></script>
+<script>
+    $(document).ready(function () {
+        var arr = []
+        $('a').each(function () {
+            var href = $(this).attr('href')
+            if (href.indexOf('.html') > -1) {
+                arr.push(href)
+            }
+        });
+        console.log(arr);
+    })
+</script>
 </body>
 
 </html>
