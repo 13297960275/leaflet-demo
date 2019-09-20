@@ -943,6 +943,9 @@
                 <div class="modal-body">
                     我在iframe里面显示
                 </div>
+                <div class="modal-footer">
+                    <button type="button" id="456">关闭</button>
+                </div>
             </div>
         </div>
     </div>
@@ -1256,6 +1259,19 @@
         </div>
     </div>
 
+    <button type="button" id="123">打开</button>
+    <script>
+        jQuery(document).ready(function () {
+            $('#123').on('click', function (e) {
+                console.log('123', e)
+                $("#example-modal-iframe").modal()
+            })
+            $('#456').on('click', function (e) {
+                console.log('456', e)
+                $("#example-modal-iframe").modal('hide')
+            })
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,39 @@
+{
+    "status": 1,
+    "msg": "",
+    "title": "JSON请求的相册",
+    "id": 8,
+    "start": 0,
+    "data": [
+        {
+            "alt": "美女1",
+            "pid": 109,
+            "src": "./img/portraits/1.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "美女2",
+            "pid": 110,
+            "src": "./img/portraits/2.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "美女3",
+            "pid": 111,
+            "src": "./img/portraits/3.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "美女4",
+            "pid": 112,
+            "src": "./img/portraits/4.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "美女5",
+            "pid": 113,
+            "src": "./img/portraits/5.jpg",
+            "thumb": ""
+        }
+    ]
+}

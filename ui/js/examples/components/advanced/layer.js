@@ -277,7 +277,7 @@
                     fixed: false, //不固定
                     shade: 0,
                     maxmin: true,
-                    content: $.ctx + '/examples/components/advanced/_layer-iframe.html'
+                    content: $.ctx + '/page/examples/components/advanced/_layer-iframe.html'
                 });
                 break;
             case 8:
