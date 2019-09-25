@@ -192,7 +192,6 @@
                       <span>切换布局</span>
                     </a>
                     <div class="dropdown-menu" role="menu">
-
                       <a class="dropdown-item no-menu change-layout" href="javascript:;" data-layout="base"
                         role="menuitem">Base 布局 </a>
                       <a class="dropdown-item no-menu change-layout active" href="javascript:;" data-layout="topbar"
@@ -1686,7 +1685,7 @@
     <div class="contabs-scroll float-left">
       <ul class="nav con-tabs">
         <li>
-          <a href="/home" target="iframe-0" title="首页"><span>首页</span></a>
+          <a href="/structure" target="iframe-0" title="首页"><span>首页</span></a>
         </li>
       </ul>
     </div>
@@ -1765,7 +1764,7 @@
       $("a[target]").each(function () {
         var href = $(this).attr('href')
         // if (href.indexOf('.html') > -1) {
-          arr.push(href)
+        arr.push(href)
         // }
       });
       console.log(arr);
