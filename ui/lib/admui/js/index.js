@@ -4,10 +4,20 @@
     theme: function () {
       var e, a, t, n, i, s = p("body"),
         o = p("#admui-siteStyle", p("head")),
+        lo = p('.change-layout.active').attr('data-layout'),
         r = localStorage.getItem("admui.base.skinTools"),
         l = -1 === o.prop("href").indexOf("?v=") ? "" : ".min";
-      r && (r = JSON.parse(r).val, e = this.themeColor = r.themeColor, a = r.sidebar, t = r.navbar, n = r.menuDisplay, i = r.menuTxtIcon, e && "primary" !== e && setTimeout(function () {
-        o.attr("href", "lib/admui/skins/" + e + "/index" + l + ".css")
+      r && (r = JSON.parse(r).val, e = this.themeColor = r.themeColor, p('body[data-theme]').attr('data-theme', lo), a = r.sidebar, t = r.navbar, n = r.menuDisplay, i = r.menuTxtIcon, e && setTimeout(function () {
+        console.log('theme ', lo)
+        if (lo == 'base') {
+          "primary" !== e ? o.attr("href", "lib/admui/skins/" + e + "/index" + l + ".css") : o.attr("href", "lib/admui/css/index.css")
+          p('li.site-menu-item.has-sub').removeClass('dropdown')
+          p('ul.site-menu-sub').removeClass('dropdown-menu')
+        } else {
+          o.attr("href", "lib/admui/topbar/css/index.css")
+          p('li.site-menu-item.has-sub').addClass('dropdown')
+          p('ul.site-menu-sub').addClass('dropdown-menu')
+        }
       }, 130), a && "site-menubar-light" === a && p("#admui-siteMenubar").addClass("site-menubar-light"), t && "" !== t && p(".site-navbar").addClass(t), "" === r.navbarInverse && p(".site-navbar").removeClass("navbar-inverse"), n && "site-menubar-fold" === n && (p.site.menubar.fold(), i && "site-menubar-keep" === i ? s.addClass("site-menubar-keep") : s.addClass("site-menubar-fold-alt")), "" === r.tabFlag && s.removeClass("site-contabs-open"))
     },
     iframeTheme: function () {
@@ -55,6 +65,7 @@
     run: function () {
       var e = this,
         a = this.$content = p("#admui-pageContent");
+        // console.log(e)
       p.content = p.content || {}, p.extend(p.content, {
         window: function () {
           var e = a.find("iframe.active").attr("name");
@@ -105,7 +116,14 @@
         }))
       }), p('[data-toggle="tooltip"]').tooltip({
         trigger: "hover"
-      }), p('[data-toggle="popover"]').popover(), t.localStorage && (this.theme(), this._tabsDraw()), p.components.init()
+      }), p('[data-toggle="popover"]').popover(), t.localStorage && (this.theme(), this._tabsDraw()), p.components.init(), p('.change-layout').on('click', function (ev) {
+        // console.log(ev, e)
+        p('.change-layout').removeClass('active')
+        p(this).addClass('active')
+        var lo = p('.change-layout.active').attr('data-layout');
+        console.log('reload ', lo)
+        e.theme()
+      })
     }
   }), p.site.run()
 }(document, window, jQuery);

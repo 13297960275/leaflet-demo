@@ -5414,7 +5414,7 @@ fieldset[disabled] .btn-pure:hover {
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 1030
+  z-index: 103
 }
 
 .navbar-fixed-top {
@@ -5429,7 +5429,7 @@ fieldset[disabled] .btn-pure:hover {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1030;
+  z-index: 103;
   width: 100%
 }
 
@@ -18847,7 +18847,7 @@ body {
 }
 
 .site-menubar {
-  z-index: 1030;
+  z-index: 103;
   position: fixed;
   top: 60px;
   background: #263238;
@@ -23073,29 +23073,6 @@ body>.loader {
   animation: icon-spin-reverse 2s infinite linear
 }
 
-.icon-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg)
-}
-
-.icon-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg)
-}
-
-.icon-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg)
-}
-
-.icon-flip-horizontal,
-.icon-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation, mirror=1)
-}
-
 .icon-flip-horizontal {
   -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1)
@@ -23219,37 +23196,6 @@ body>.loader {
   display: none;
 }
 
-.dropdown-item {
-  width: -webkit-calc(100% - 10px);
-  width: calc(100% - 10px);
-  /* margin: 2px 5px; */
-  border-radius: .215rem;
-  -webkit-transition: background-color .25s;
-  transition: background-color .25s;
-}
-
-.dropdown-item {
-  display: block;
-  width: 100%;
-  padding: .572rem 1.072rem;
-  clear: both;
-  color: #76838f;
-  text-align: inherit;
-  background-color: transparent;
-  border: 0;
-}
-
-.dropdown-divider {
-  margin: 6px 0;
-}
-
-.dropdown-divider {
-  height: 0;
-  margin: .5rem 0;
-  overflow: hidden;
-  border-top: 1px solid #e4eaec;
-}
-
 .site-menu-item>.dropdown-menu {
   padding: 0;
   max-height: 300px;
@@ -23278,19 +23224,10 @@ body>.loader {
   background-color: transparent;
 }
 
-.dropdown-menu>.active>a,
-.dropdown-menu>.active>a:focus,
-.dropdown-menu>.active>a:hover {
-  color: #f3f7f9;
-  text-decoration: none;
-  background-color: #76838f;
-  outline: 0;
-}
-
-.site-menu-item.active {
-  border: 1px solid #4d87ff;
-}
-
-.site-menu-item.open.active {
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #4e97d9;
+  cursor: default;
+  background-color: #fff;
   border: none;
+  border-bottom-color: transparent;
 }

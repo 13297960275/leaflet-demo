@@ -37,9 +37,6 @@
     <!-- 样式 -->
     <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./lib/admui/css/index.css" id="admui-siteStyle">
-
-    <!-- <link rel="stylesheet" href="./lib/admui/topbar/css/index.css" id="admui-siteStyle"> -->
-
     <!-- 图标 CSS-->
     <link rel="stylesheet" href="./lib/fonts/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="./lib/fonts/web-icons/web-icons.css">
@@ -49,33 +46,6 @@
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
     <link rel="stylesheet" href="./lib/formvalidation/formValidation.css">
     <style>
-        /* body {
-            padding-top: 0px;
-        }
-
-        .site-navbar {
-            display: none;
-        }
-
-        .site-menubar {
-            top: 0px;
-            height: -webkit-calc(100% - 61px);
-            height: 100%;
-        }
-
-        .site-menubar {
-            top: 61px;
-        }
-
-        .site-contabs-open .site-contabs {
-            top: 61px;
-        }
-
-        .site-page .page-container {
-            width: 100%;
-            -webkit-overflow-scrolling: touch;
-            margin-top: 100px;
-        } */
     </style>
 
     <!-- 插件 -->
@@ -174,52 +144,10 @@
                                     <i class="icon wb-settings"></i> <span>系统管理</span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown" id="admui-navbarSubMenu">
+                            <li class="dropdown" id="admui-navbarSubMenu">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:;"
                                     data-animation="slide-bottom">
                                     更多
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item no-menu" href="/sitemap" target="_blank">
-                                        <i class="icon wb-list-numbered"></i>
-                                        <span>网站地图</span>
-                                    </a>
-                                    <a class="dropdown-item no-menu" href="/system/menu" target="_blank">
-                                        <i class="icon wb-wrench"></i>
-                                        <span>菜单管理</span>
-                                    </a>
-                                    <div class="dropdown-submenu">
-                                        <a class="dropdown-item no-menu" href="javascript:;" tabindex="-1">
-                                            <i class="icon wb-random" aria-hidden="true"></i>
-                                            <span>切换版本</span>
-                                        </a>
-                                        <div class="dropdown-menu" role="menu">
-                                            <a class="dropdown-item active no-menu" href="http://iframe.demo.admui.com"
-                                                role="menuitem">Iframe
-                                                版</a>
-                                            <a class="dropdown-item no-menu" href="http://basic.demo.admui.com"
-                                                role="menuitem">Basic 版</a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-submenu">
-                                        <a class="dropdown-item no-menu" href="javascript:;" tabindex="-1">
-                                            <i class="icon wb-random" aria-hidden="true"></i>
-                                            <span>切换布局</span>
-                                        </a>
-                                        <div class="dropdown-menu" role="menu">
-
-                                            <a class="dropdown-item no-menu change-layout active" href="javascript:;"
-                                                data-layout="base" role="menuitem">Base 布局 </a>
-                                            <a class="dropdown-item no-menu change-layout" href="javascript:;"
-                                                data-layout="topbar" role="menuitem">Topbar 布局</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown" id="admui-navbarSubMenu">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"
-                                    data-animation="slide-bottom" aria-expanded="true" role="button">
-                                    <i class="icon wb-more-vertical"></i>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="no-menu" role="presentation">
@@ -234,15 +162,14 @@
                                         </a>
                                     </li>
                                     <div class="dropdown-divider" role="presentation"></div>
-                                    <div class="dropdown-submenu">
+                                    <div class="dropdown-submenu" style="display: none;">
                                         <a class="dropdown-item no-menu" href="javascript:;" tabindex="-1">
                                             <i class="icon wb-random" aria-hidden="true"></i>
                                             <span>切换版本</span>
                                         </a>
                                         <div class="dropdown-menu" role="menu">
                                             <a class="dropdown-item active no-menu" href="http://iframe.demo.admui.com"
-                                                role="menuitem">Iframe
-                                                版</a>
+                                                role="menuitem">Iframe 版</a>
                                             <a class="dropdown-item no-menu" href="http://basic.demo.admui.com"
                                                 role="menuitem">Basic 版</a>
                                         </div>
@@ -253,7 +180,6 @@
                                             <span>切换布局</span>
                                         </a>
                                         <div class="dropdown-menu" role="menu">
-
                                             <a class="dropdown-item no-menu change-layout active" href="javascript:;"
                                                 data-layout="base" role="menuitem">Base 布局 </a>
                                             <a class="dropdown-item no-menu change-layout" href="javascript:;"
@@ -312,12 +238,20 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="hidden-xs" id="admui-navbarDisplay" data-toggle="tooltip" data-placement="bottom"
+                    <li class="hidden-xs" id="admui-navbarDisplay" data-toggle="tooltip" data-placement="left"
                         title="设置主题与布局等">
-                        <a class="icon wb-layout" href="./page/system/settings/display.html" data-iframe
-                            target="_blank">
+                        <a class="icon wb-layout" href="./page/system/settings/display.html" data-iframe target="_blank">
                             <span class="sr-only">主题与布局</span>
                         </a>
+                        <!-- <a class="icon wb-layout" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
+                            <span class="sr-only">主题与布局</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="conTabsDropdown" role="menu">
+                            <a class="dropdown-item no-menu change-layout active" href="javascript:;" data-layout="base"
+                                role="menuitem">Base 布局 </a>
+                            <a class="dropdown-item no-menu change-layout" href="javascript:;" data-layout="topbar"
+                                role="menuitem">Topbar 布局</a>
+                        </ul> -->
                     </li>
                     <li class="hidden-xs" id="admui-navbarFullscreen" data-toggle="tooltip" data-placement="bottom"
                         title="全屏">
@@ -1346,7 +1280,8 @@
             </button>
             <button type="button" class="btn btn-default dropdown-toggle btn-outline" data-toggle="dropdown"
                 aria-expanded="false">
-                <span class="caret"></span> <span class="sr-only">切换菜单</span>
+                <!-- <span class="caret"></span>  -->
+                <span class="sr-only">切换菜单</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="conTabsDropdown" role="menu">
                 <li class="reload-page" role="presentation">
@@ -1379,17 +1314,12 @@
     <script src="./lib/screenfull/screenfull.min.js"></script>
     <script src="./lib/nprogress/nprogress.min.js"></script>
     <script src="./lib/toastr/toastr.js"></script>
-    <!-- <script src="./lib/lodash/lodash.min.js"></script> -->
     <script src="./lib/admui/js/global/plugins/responsive-tabs.js"></script>
     <!-- 布局 -->
     <script src="./lib/admui/js/sections/menu.js"></script>
     <script src="./lib/admui/js/sections/media-menu.js"></script>
     <script src="./lib/admui/js/sections/content-tabs.js"></script>
     <script src="./lib/admui/js/index.js"></script>
-
-    <!-- <script src="./lib/admui/topbar/js/site.js"></script> -->
-    <!-- <script src="./lib/admui/topbar/js/sections/content-tabs.js"></script> -->
-
     <!-- 消息通知 -->
     <script src="./js/notify-msg.js"></script>
 </body>
