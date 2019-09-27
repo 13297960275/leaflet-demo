@@ -4,9 +4,10 @@
     theme: function () {
       var e, a, t, n, i, s = p("body"),
         o = p("#admui-siteStyle", p("head")),
-        lo = p('.change-layout.active').attr('data-layout'),
+        lo = p('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base',
         r = localStorage.getItem("admui.base.skinTools"),
         l = -1 === o.prop("href").indexOf("?v=") ? "" : ".min";
+        lo && localStorage.setItem('layout', lo), p('.change-layout.active').removeClass('active'), p('.change-layout[data-layout="' + lo + '"]').addClass('active')
       r && (r = JSON.parse(r).val, e = this.themeColor = r.themeColor, p('body[data-theme]').attr('data-theme', lo), a = r.sidebar, t = r.navbar, n = r.menuDisplay, i = r.menuTxtIcon, e && setTimeout(function () {
         console.log('theme ', lo)
         if (lo == 'base') {
@@ -118,9 +119,10 @@
         trigger: "hover"
       }), p('[data-toggle="popover"]').popover(), t.localStorage && (this.theme(), this._tabsDraw()), p.components.init(), p('.change-layout').on('click', function (ev) {
         // console.log(ev, e)
-        p('.change-layout').removeClass('active')
-        p(this).addClass('active')
-        var lo = p('.change-layout.active').attr('data-layout');
+        var lo = p(this).attr('data-layout');
+        localStorage.setItem('layout', lo);
+        p('.change-layout.active').removeClass('active')
+        p('.change-layout[data-layout="' + lo + '"]').addClass('active')
         console.log('reload ', lo)
         e.theme()
       })
