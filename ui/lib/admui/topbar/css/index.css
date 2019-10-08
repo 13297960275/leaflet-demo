@@ -18818,11 +18818,11 @@ button.close {
 }
 
 .site-menubar-fold .navbar-brand-logo.navbar-logo {
-  display: none !important
+  display: inline-block !important
 }
 
 .site-menubar-fold .navbar-brand-logo.navbar-logo-mini {
-  display: inline-block !important
+  display: none !important
 }
 
 .site-menubar-unfold .navbar-brand-logo.navbar-logo {
@@ -23134,7 +23134,9 @@ a.bg-danger:hover {
   background-color: transparent;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
   color: #4e97d9;
   cursor: default;
   background-color: #fff;
@@ -23142,23 +23144,53 @@ a.bg-danger:hover {
   border-bottom-color: transparent;
 }
 
-.dropdown-menu li .icon:first-child, .dropdown-menu li>a .icon:first-child {
+.dropdown-menu li .icon:first-child,
+.dropdown-menu li>a .icon:first-child {
   width: 1em;
   margin-right: .5em;
   text-align: center;
 }
 
 .site-contabs-open .site-contabs .contabs-scroll .con-tabs>li.active {
-    background: #f1f4f5;
-}
-.site-contabs-open .site-contabs .contabs-scroll .con-tabs>li {
-    float: left;
-    width: 7.5em;
+  background: #f1f4f5;
 }
 
-/* .site-menu-item>a:focus, .site-menu-item>a:hover {
-  color: #f1f4f5;
+.site-contabs-open .site-contabs .contabs-scroll .con-tabs>li {
+  float: left;
+  width: 7.5em;
+}
+
+#admui-siteMenubar .dropdown-menu>.active>a,
+#admui-siteMenubar .dropdown-menu>.active>a:focus,
+#admui-siteMenubar .dropdown-menu>.active>a:hover,
+#admui-siteMenubar .dropdown-menu>li>a:focus,
+#admui-siteMenubar .dropdown-menu>li>a:hover {
+  color: #fff;
   text-decoration: none;
-  background-color: rgba(53, 131, 202, .03);
+  background-color: rgba(0, 0, 0, .06);
   outline: 0;
-} */
+}
+
+.dropdown-menu .dropdown-menu {
+  border: none;
+}
+
+.site-menu-item>.dropdown-menu {
+  padding: 0;
+  overflow: auto;
+  max-height: unset;
+}
+
+ul.site-menu>li.site-menu-item.has-sub.dropdown.open>ul.site-menu-sub.dropdown-menu>li.site-menu-item>a {
+  clear: both;
+  padding: 0 20px;
+}
+
+ul.site-menu>li.site-menu-item.has-sub.dropdown.open>ul.site-menu-sub.dropdown-menu>li.site-menu-item>ul.site-menu-sub.dropdown-menu>li.site-menu-item>a {
+  clear: both;
+  padding: 0 30px;
+}
+
+li.site-menu-item.has-sub.dropdown.open>ul.site-menu-sub.dropdown-menu>li.site-menu-item>ul {
+  background-color: rgba(0, 0, 0, .06);
+}

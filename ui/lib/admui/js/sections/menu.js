@@ -36,16 +36,32 @@
         i._collapse(s, function () {
           s.removeClass("open")
         }), e.stopPropagation()
-      }).on("click.site.menu ", ".site-menu-item > a", function () {
+      }).on("click.site.menu ", ".site-menu-item > a", function (ev) {
         var e = o(this),
           s = e.parent();
         s.is(".has-sub") ? s.is(".open") ? s.trigger("close.site.menu") : s.trigger("open.site.menu") : (e.closest("li").siblings(".open").trigger("close.site.menu"), e.closest("li.has-sub").siblings(".open").trigger("close.site.menu"), e.parents("div.tab-pane").siblings().find("li.open").trigger("close.site.menu"), n.find("li.active").trigger("deactive.site.menu"), s.trigger("active.site.menu"))
-      }).on("touchend.site.menu", "> .site-menu-item > a", function () {
+      }).on("touchend.site.menu", "> .site-menu-item > a", function (ev) {
         var e = o(this).parent(".site-menu-item");
         s.hasClass("site-menubar-fold") && e.is(".has-sub") && e.parent(".site-menu").length && (e.siblings(".hover").removeClass("hover"), e.is(".hover") ? e.removeClass("hover") : e.addClass("hover"))
       }).on("scroll.site.menu", ".site-menu-sub", function (e) {
         e.stopPropagation()
       })
+
+      // o(window).on("click", function (ev) {
+      //   console.log(this)
+      //   // console.log(ev)
+      //   o.site.menu._collapse_all()
+      // })
+
+      var lo = o('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base'
+      lo == 'topbar' && setTimeout(function () {
+        o.site.menu._collapse_all()
+      }, 200);
+    },
+    _collapse_all: function (e) {
+      var e = o('.site-menu-item > a'),
+        s = e.parent();
+      s.is(".has-sub") ? s.is(".open") ? s.trigger("close.site.menu") : '' : (e.closest("li").siblings(".open").trigger("close.site.menu"), e.closest("li.has-sub").siblings(".open").trigger("close.site.menu"), e.parents("div.tab-pane").siblings().find("li.open").trigger("close.site.menu"))
     },
     _collapse: function (e, s) {
       var i = this;
@@ -61,6 +77,7 @@
     },
     refresh: function () {
       var e = this.$siteMenubar;
+      o(".active.dropdown.open").removeClass("open")
       e.find("li.open").trigger("close.site.menu"), e.find("li.active").trigger("deactive.site.menu")
     },
     position: function (e, s) {

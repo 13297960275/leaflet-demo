@@ -54,6 +54,23 @@
     <div class="page animation-fade page-display">
         <div class="page-content">
             <form id="displayForm" class="form-horizontal padding-vertical-30">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">切換布局：</label>
+                    <div class="col-sm-10">
+                        <div class="radio-inline radio-custom radio-primary">
+                            <input type="radio" id="baseLayout" class="change-layout" data-layout="base" checked
+                                name="layoutFlag" value="site-contabs-open">
+                            <label for="baseLayout">Base 布局</label>
+                        </div>
+                        <div class="radio-inline radio-custom radio-primary">
+                            <input type="radio" id="topbarLayout" class="change-layout" data-layout="topbar"
+                                name="layoutFlag" value="">
+                            <label for="topbarLayout">Topbar 布局</label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">导航条颜色：</label>
                     <div class="col-sm-10" id="skintoolsNavbar">
@@ -148,6 +165,8 @@
                         </select>
                     </div>
                 </div>
+                <hr>
+
                 <div class="form-group">
                     <label class="col-sm-2 control-label">菜单显示：</label>
                     <div class="col-sm-10">

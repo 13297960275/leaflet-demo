@@ -117,7 +117,7 @@
         }))
       }), p('[data-toggle="tooltip"]').tooltip({
         trigger: "hover"
-      }), p('[data-toggle="popover"]').popover(), t.localStorage && (this.theme(), this._tabsDraw()), p.components.init(), p('.change-layout').on('click', function (ev) {
+      }), p('[data-toggle="popover"]').popover(), t.localStorage && (this.theme(), this._tabsDraw()), p.components.init(), p(document).on("click", '.change-layout', function (ev) {
         // console.log(ev, e)
         var lo = p(this).attr('data-layout');
         localStorage.setItem('layout', lo);
