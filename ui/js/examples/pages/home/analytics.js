@@ -227,7 +227,7 @@
                 label: 'Safari',
                 value: 1100
             }],
-            colors: ['#f96868', '#62a9eb', '#f3a754']
+            colors: ['#ff4c52', '#62a9eb', '#f3a754']
         });
 
         window.morris = [];

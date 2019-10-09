@@ -18748,23 +18748,23 @@ button.close {
 }
 
 .site-navbar .navbar-toolbar .navbar-message-content .icon.system {
-  background-color: #f96868
+  background-color: #ff4c52
 }
 
 .site-navbar .navbar-toolbar .navbar-message-content .icon.task {
-  background-color: #46be8a
+  background-color: #11c26d
 }
 
 .site-navbar .navbar-toolbar .navbar-message-content .icon.setting {
-  background-color: #62a8ea
+  background-color: #3e8ef7
 }
 
 .site-navbar .navbar-toolbar .navbar-message-content .icon.event {
-  background-color: #8d6658
+  background-color: #997b71
 }
 
 .site-navbar .navbar-toolbar .navbar-message-content .icon.other {
-  background-color: #f2a654
+  background-color: #eb6709
 }
 
 .site-navbar .nav-tabs {
@@ -21637,7 +21637,7 @@ body>.loader {
 }
 
 .primary-600 {
-  color: #62a8ea !important
+  color: #3e8ef7 !important
 }
 
 .primary-700 {
@@ -21669,7 +21669,7 @@ body>.loader {
 }
 
 .blue-600 {
-  color: #62a8ea !important
+  color: #3e8ef7 !important
 }
 
 .blue-700 {
@@ -21701,7 +21701,7 @@ body>.loader {
 }
 
 .red-600 {
-  color: #f96868 !important
+  color: #ff4c52 !important
 }
 
 .red-700 {
@@ -21733,7 +21733,7 @@ body>.loader {
 }
 
 .pink-600 {
-  color: #f96197 !important
+  color: #f74584 !important
 }
 
 .pink-700 {
@@ -21765,7 +21765,7 @@ body>.loader {
 }
 
 .purple-600 {
-  color: #926dde !important
+  color: #9463f7 !important
 }
 
 .purple-700 {
@@ -21797,7 +21797,7 @@ body>.loader {
 }
 
 .indigo-600 {
-  color: #677ae4 !important
+  color: #667afa !important
 }
 
 .indigo-700 {
@@ -21829,7 +21829,7 @@ body>.loader {
 }
 
 .cyan-600 {
-  color: #57c7d4 !important
+  color: #0bb2d4 !important
 }
 
 .cyan-700 {
@@ -21861,7 +21861,7 @@ body>.loader {
 }
 
 .teal-600 {
-  color: #3aa99e !important
+  color: #17b3a3 !important
 }
 
 .teal-700 {
@@ -21893,7 +21893,7 @@ body>.loader {
 }
 
 .green-600 {
-  color: #46be8a !important
+  color: #11c26d !important
 }
 
 .green-700 {
@@ -21957,7 +21957,7 @@ body>.loader {
 }
 
 .yellow-600 {
-  color: #f7da64 !important
+  color: #ffcd17 !important
 }
 
 .yellow-700 {
@@ -21989,7 +21989,7 @@ body>.loader {
 }
 
 .orange-600 {
-  color: #f2a654 !important
+  color: #eb6709 !important
 }
 
 .orange-700 {
@@ -22021,7 +22021,7 @@ body>.loader {
 }
 
 .brown-600 {
-  color: #8d6658 !important
+  color: #997b71 !important
 }
 
 .brown-700 {
@@ -22117,7 +22117,7 @@ body>.loader {
 }
 
 .bg-primary-600 {
-  background-color: #62a8ea !important
+  background-color: #3e8ef7 !important
 }
 
 .bg-primary-700 {
@@ -22149,7 +22149,7 @@ body>.loader {
 }
 
 .bg-blue-600 {
-  background-color: #62a8ea !important
+  background-color: #3e8ef7 !important
 }
 
 .bg-blue-700 {
@@ -22181,7 +22181,7 @@ body>.loader {
 }
 
 .bg-red-600 {
-  background-color: #f96868 !important
+  background-color: #ff4c52 !important
 }
 
 .bg-red-700 {
@@ -22213,7 +22213,7 @@ body>.loader {
 }
 
 .bg-pink-600 {
-  background-color: #f96197 !important
+  background-color: #f74584 !important
 }
 
 .bg-pink-700 {
@@ -22245,7 +22245,7 @@ body>.loader {
 }
 
 .bg-purple-600 {
-  background-color: #926dde !important
+  background-color: #9463f7 !important
 }
 
 .bg-purple-700 {
@@ -22277,7 +22277,7 @@ body>.loader {
 }
 
 .bg-indigo-600 {
-  background-color: #677ae4 !important
+  background-color: #667afa !important
 }
 
 .bg-indigo-700 {
@@ -22309,7 +22309,7 @@ body>.loader {
 }
 
 .bg-cyan-600 {
-  background-color: #57c7d4 !important
+  background-color: #0bb2d4 !important
 }
 
 .bg-cyan-700 {
@@ -22341,7 +22341,7 @@ body>.loader {
 }
 
 .bg-teal-600 {
-  background-color: #3aa99e !important
+  background-color: #17b3a3 !important
 }
 
 .bg-teal-700 {
@@ -22373,7 +22373,7 @@ body>.loader {
 }
 
 .bg-green-600 {
-  background-color: #46be8a !important
+  background-color: #11c26d !important
 }
 
 .bg-green-700 {
@@ -22437,7 +22437,7 @@ body>.loader {
 }
 
 .bg-yellow-600 {
-  background-color: #f7da64 !important
+  background-color: #ffcd17 !important
 }
 
 .bg-yellow-700 {
@@ -22469,7 +22469,7 @@ body>.loader {
 }
 
 .bg-orange-600 {
-  background-color: #f2a654 !important
+  background-color: #eb6709 !important
 }
 
 .bg-orange-700 {
@@ -22501,7 +22501,7 @@ body>.loader {
 }
 
 .bg-brown-600 {
-  background-color: #8d6658 !important
+  background-color: #997b71 !important
 }
 
 .bg-brown-700 {
@@ -22591,7 +22591,7 @@ body>.loader {
 
 .bg-primary {
   color: #fff;
-  background-color: #62a8ea
+  background-color: #3e8ef7
 }
 
 .bg-primary:hover {
@@ -22610,7 +22610,7 @@ a.bg-primary:hover {
 
 .bg-success {
   color: #fff;
-  background-color: #46be8a
+  background-color: #11c26d
 }
 
 .bg-success:hover {
@@ -22629,7 +22629,7 @@ a.bg-success:hover {
 
 .bg-info {
   color: #fff;
-  background-color: #57c7d4
+  background-color: #0bb2d4
 }
 
 .bg-info:hover {
@@ -22648,7 +22648,7 @@ a.bg-info:hover {
 
 .bg-warning {
   color: #fff;
-  background-color: #f2a654
+  background-color: #eb6709
 }
 
 .bg-warning:hover {
@@ -22667,7 +22667,7 @@ a.bg-warning:hover {
 
 .bg-danger {
   color: #fff;
-  background-color: #f96868
+  background-color: #ff4c52
 }
 
 .bg-danger:hover {

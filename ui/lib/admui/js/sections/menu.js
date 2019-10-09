@@ -48,11 +48,12 @@
         e.stopPropagation()
       })
 
-      // o(window).on("click", function (ev) {
-      //   console.log(this)
-      //   // console.log(ev)
-      //   o.site.menu._collapse_all()
-      // })
+      o(document.body).on("click", function (t) {
+        // console.log(t.target)
+        var tg = t.target,
+          p = o(tg).parents('.site-menu-item');
+        !p.length && lo == 'topbar' && o.site.menu._collapse_all()
+      })
 
       lo == 'topbar' && setTimeout(function () {
         o.site.menu._collapse_all()

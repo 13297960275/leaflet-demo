@@ -1,49 +1,49 @@
 .page-display .color-radio .radio-custom.radio-primary label::before {
-  border-color: #62a8ea
+  border-color: #3e8ef7
 }
 
 .page-display .color-radio .radio-custom.radio-primary label::after {
-  border-color: #62a8ea
+  border-color: #3e8ef7
 }
 
 .page-display .color-radio .radio-custom.radio-primary input[type=radio]:checked+label::before {
-  border-color: #62a8ea
+  border-color: #3e8ef7
 }
 
 .page-display .color-radio .radio-custom.radio-brown label::before {
-  border-color: #8d6658
+  border-color: #997b71
 }
 
 .page-display .color-radio .radio-custom.radio-brown label::after {
-  border-color: #8d6658
+  border-color: #997b71
 }
 
 .page-display .color-radio .radio-custom.radio-brown input[type=radio]:checked+label::before {
-  border-color: #8d6658
+  border-color: #997b71
 }
 
 .page-display .color-radio .radio-custom.radio-cyan label::before {
-  border-color: #57c7d4
+  border-color: #0bb2d4
 }
 
 .page-display .color-radio .radio-custom.radio-cyan label::after {
-  border-color: #57c7d4
+  border-color: #0bb2d4
 }
 
 .page-display .color-radio .radio-custom.radio-cyan input[type=radio]:checked+label::before {
-  border-color: #57c7d4
+  border-color: #0bb2d4
 }
 
 .page-display .color-radio .radio-custom.radio-green label::before {
-  border-color: #46be8a
+  border-color: #11c26d
 }
 
 .page-display .color-radio .radio-custom.radio-green label::after {
-  border-color: #46be8a
+  border-color: #11c26d
 }
 
 .page-display .color-radio .radio-custom.radio-green input[type=radio]:checked+label::before {
-  border-color: #46be8a
+  border-color: #11c26d
 }
 
 .page-display .color-radio .radio-custom.radio-grey label::before {
@@ -59,85 +59,85 @@
 }
 
 .page-display .color-radio .radio-custom.radio-indigo label::before {
-  border-color: #677ae4
+  border-color: #667afa
 }
 
 .page-display .color-radio .radio-custom.radio-indigo label::after {
-  border-color: #677ae4
+  border-color: #667afa
 }
 
 .page-display .color-radio .radio-custom.radio-indigo input[type=radio]:checked+label::before {
-  border-color: #677ae4
+  border-color: #667afa
 }
 
 .page-display .color-radio .radio-custom.radio-orange label::before {
-  border-color: #f2a654
+  border-color: #eb6709
 }
 
 .page-display .color-radio .radio-custom.radio-orange label::after {
-  border-color: #f2a654
+  border-color: #eb6709
 }
 
 .page-display .color-radio .radio-custom.radio-orange input[type=radio]:checked+label::before {
-  border-color: #f2a654
+  border-color: #eb6709
 }
 
 .page-display .color-radio .radio-custom.radio-pink label::before {
-  border-color: #f96197
+  border-color: #f74584
 }
 
 .page-display .color-radio .radio-custom.radio-pink label::after {
-  border-color: #f96197
+  border-color: #f74584
 }
 
 .page-display .color-radio .radio-custom.radio-pink input[type=radio]:checked+label::before {
-  border-color: #f96197
+  border-color: #f74584
 }
 
 .page-display .color-radio .radio-custom.radio-purple label::before {
-  border-color: #926dde
+  border-color: #9463f7
 }
 
 .page-display .color-radio .radio-custom.radio-purple label::after {
-  border-color: #926dde
+  border-color: #9463f7
 }
 
 .page-display .color-radio .radio-custom.radio-purple input[type=radio]:checked+label::before {
-  border-color: #926dde
+  border-color: #9463f7
 }
 
 .page-display .color-radio .radio-custom.radio-red label::before {
-  border-color: #f96868
+  border-color: #ff4c52
 }
 
 .page-display .color-radio .radio-custom.radio-red label::after {
-  border-color: #f96868
+  border-color: #ff4c52
 }
 
 .page-display .color-radio .radio-custom.radio-red input[type=radio]:checked+label::before {
-  border-color: #f96868
+  border-color: #ff4c52
 }
 
 .page-display .color-radio .radio-custom.radio-teal label::before {
-  border-color: #3aa99e
+  border-color: #17b3a3
 }
 
 .page-display .color-radio .radio-custom.radio-teal label::after {
-  border-color: #3aa99e
+  border-color: #17b3a3
 }
 
 .page-display .color-radio .radio-custom.radio-teal input[type=radio]:checked+label::before {
-  border-color: #3aa99e
+  border-color: #17b3a3
 }
 
 .page-display .color-radio .radio-custom.radio-yellow label::before {
-  border-color: #f7da64
+  border-color: #ffcd17
 }
 
 .page-display .color-radio .radio-custom.radio-yellow label::after {
-  border-color: #f7da64
+  border-color: #ffcd17
 }
 
 .page-display .color-radio .radio-custom.radio-yellow input[type=radio]:checked+label::before {
-  border-color: #f7da64
+  border-color: #ffcd17
 }

@@ -26,7 +26,7 @@
     <!-- Win8标题栏及ICON图标 -->
     <link rel="apple-touch-icon-precomposed" href="../../../img/apple-touch-icon.png">
     <meta name="msapplication-TileImage" content="../../../img/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
+    <meta name="msapplication-TileColor" content="#3e8ef7">
 
     <!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='/ie.html'"/>
@@ -57,15 +57,15 @@
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">切換布局：</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" id="layoutTools">
                         <div class="radio-inline radio-custom radio-primary">
-                            <input type="radio" id="baseLayout" class="change-layout" data-layout="base" checked
-                                name="layoutFlag" value="site-contabs-open">
+                            <input type="radio" class="change-layout" data-layout="base" checked
+                                name="layoutFlag" value="base">
                             <label for="baseLayout">Base 布局</label>
                         </div>
                         <div class="radio-inline radio-custom radio-primary">
-                            <input type="radio" id="topbarLayout" class="change-layout" data-layout="topbar"
-                                name="layoutFlag" value="">
+                            <input type="radio" class="change-layout" data-layout="topbar"
+                                name="layoutFlag" value="topbar">
                             <label for="topbarLayout">Topbar 布局</label>
                         </div>
                     </div>

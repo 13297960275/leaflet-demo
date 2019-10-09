@@ -1,4 +1,3 @@
-
 (function (window, document, $) {
     'use strict';
 
@@ -16,6 +15,7 @@
         path: $.ctx + 'lib/admui/',
         $siteSidebar: $.parentFrame.find('.site-menubar'),
         $siteNavbar: $.parentFrame.find('.site-navbar'),
+        $layoutBox: $.parentFrame.find('.change-layout'),
         navbarSkins: 'bg-primary-600 bg-brown-600 bg-cyan-600 bg-green-600 bg-grey-600 bg-indigo-600 bg-orange-600 bg-pink-600 bg-purple-600 bg-red-600 bg-teal-600 bg-yellow-700',
         defaultSettings: {
             sidebar: 'site-menubar-dark',
@@ -24,13 +24,20 @@
             themeColor: 'primary',
             menuDisplay: 'site-menubar-unfold',
             menuTxtIcon: 'site-menubar-keep',
-            tabFlag: 'site-contabs-open'
+            tabFlag: 'site-contabs-open',
+            layout: localStorage.getItem('layout')
         },
         init: function () {
             var self = this;
+            console.log(self, $.site)
+            console.log(localStorage.getItem('admui.base.skinTools'))
+            $.site.theme()
 
             $(document).on('change', '#skintoolsSidebar', function () { // 菜单主题
                 self.sidebarEvents($(this));
+            });
+            $(document).on('click', '#layoutTools input', function () { // 布局类型
+                self.layoutEvents($(this));
             });
             $(document).on('click', '#skintoolsNavbar input', function () { // 导航条颜色
                 self.navbarEvents($(this));
@@ -110,8 +117,8 @@
             if (this.settings && $.isPlainObject(this.settings)) {
                 $.each(this.settings, function (n, v) {
                     switch (n) {
-                        case 'boxLayout':
-                            $('#boxLayout').prop('checked', v !== "");
+                        case 'layout':
+                            $('input[value="' + v + '"]', $("#layoutTools>div")).prop('checked', true);
                             break;
                         case 'sidebar':
                             $('#skintoolsSidebar').selectpicker('val', [v]);
@@ -155,6 +162,13 @@
             this.sidebarImprove(val);
             this.updateSetting('sidebar', val);
         },
+        layoutEvents: function ($item) {
+            var val = $item.val(),
+                checked = $item.prop('checked');
+            // console.log(val, checked)
+            this.updateSetting('layout', val);
+            this.layoutImprove(val);
+        },
         navbarEvents: function ($item) {
             var val = $item.val(),
                 checked = $item.prop('checked');
@@ -177,29 +191,31 @@
         sidebarImprove: function (val) {
             if (val === 'site-menubar-light') {
                 this.$siteSidebar.removeClass('site-menubar-dark').addClass(val);
-            }
-            else {
+            } else {
                 this.$siteSidebar.removeClass('site-menubar-light').addClass(val);
             }
+        },
+        layoutImprove: function (val) {
+            console.log(jQuery)
+            // this.$siteNavbar.removeClass(this.navbarSkins).addClass(val);
         },
         navbarImprove: function (val, checked) {
             if (val === 'navbar-inverse') {
                 checked ? this.$siteNavbar.addClass(val) : this.$siteNavbar.removeClass(val);
-            }
-            else {
+            } else {
                 this.$siteNavbar.removeClass(this.navbarSkins).addClass(val);
             }
         },
         primaryImprove: function (val) {
             var self = this,
                 $parentLink = $('#admui-siteStyle', $.parentFrame),
-                $iframes = $.parentFrame.find('#admui-pageContent>iframe'), parentHref,
+                $iframes = $.parentFrame.find('#admui-pageContent>iframe'),
+                parentHref,
                 parentEtx = $parentLink.prop('href').indexOf('?v=') === -1 ? '' : '.min';
 
             if (val === 'primary') {
                 parentHref = this.path + 'css/index' + parentEtx + '.css';
-            }
-            else {
+            } else {
                 parentHref = this.path + 'skins/' + val + '/index' + parentEtx + '.css';
             }
 
@@ -207,15 +223,14 @@
 
             $iframes.each(function () {
                 var thisName = $(this).attr('name'),
-                    $that = $('#admui-siteStyle',parent.frames[thisName].document),
+                    $that = $('#admui-siteStyle', parent.frames[thisName].document),
                     iframeEtx, iframeHref;
 
                 if ($that.length) {
                     iframeEtx = $that.prop('href').indexOf('?v=') === -1 ? '' : '.min';
                     if (val === 'primary') {
                         iframeHref = self.path + 'css/site' + iframeEtx + '.css';
-                    }
-                    else {
+                    } else {
                         iframeHref = self.path + 'skins/' + val + '/site' + iframeEtx + '.css';
                     }
 

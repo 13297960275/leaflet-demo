@@ -16,24 +16,27 @@
         n = i.find("ul.con-tabs");
       this.tabWidth = n.find("li").width(), this.view = i.find(".contabs-scroll").width(), this.ifameTabs(), i.on("click.site.contabs", "button.pull-left", function () {
         a.tabPosition(n, a.tabWidth, "right")
-      }).on("click.site.contabs", ".pull-right>.btn-icon", function () {
+      }).off("click.site.contabs", ".pull-right>.btn-icon").on("click.site.contabs", ".pull-right>.btn-icon", function () {
         var t = n.width();
-        a.tabPosition(n, a.tabWidth, "left", a.view, t)
-      }).on("click.site.contabs", "ul.con-tabs>li", function (t) {
+        var lo = d('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base';
+        console.log(lo)
+        a.tabPosition(n, a.tabWidth, "left", a.view, lo == 'topbar' ? t - 300 : t)
+        // a.tabPosition(n, a.tabWidth, "left", a.view, t)
+      }).off("click.site.contabs", "ul.con-tabs>li").on("click.site.contabs", "ul.con-tabs>li", function (t) {
         var e = d(t.target),
           i = d(this);
         e.is("i.wb-close-mini") ? a.closeTab(i) : i.is(".active") || (i.siblings("li").removeClass("active"), i.addClass("active"), a._checkoutTab(i.find("a")), a.enable(i)), t.preventDefault()
-      }), i.on("click.site.contabs", ".pull-right li.reload-page", function () {
+      }), i.off("click.site.contabs", ".pull-right li.reload-page").on("click.site.contabs", ".pull-right li.reload-page", function () {
         var t = i.find("ul.con-tabs>li.active>a").attr("href");
         a.$content.children('[src="' + t + '"]').attr("src", t)
-      }).on("click.site.contabs", ".pull-right li.close-other", function () {
+      }).off("click.site.contabs", ".pull-right li.close-other").on("click.site.contabs", ".pull-right li.close-other", function () {
         i.find("ul.con-tabs>li").each(function () {
           var t, e = d(this);
           e.is(".active") || 0 === e.index() || (t = e.find("a").attr("target"), e.remove(), a.$content.children('[name="' + t + '"]').remove(), a._updateSetting(t))
         }), n.animate({
           left: 0
         }, 100), a.btnView("hide")
-      }).on("click.site.contabs", ".pull-right li.close-all", function () {
+      }).off("click.site.contabs", ".pull-right li.close-all").on("click.site.contabs", ".pull-right li.close-all", function () {
         var t = i.find("ul.con-tabs>li"),
           e = t.eq(0);
         t.each(function () {
@@ -42,9 +45,9 @@
         }), n.animate({
           left: 0
         }, 100), a.btnView("hide"), e.addClass("active"), a.enable(t.eq(0)), a._checkoutTab(e.find("a")), a.$content.children(":not(:first)").remove(), a.tabSize()
-      }), d(e).on("click", "#admui-signOut", function () {
+      }), d(e).off("click", "#admui-signOut").on("click", "#admui-signOut", function () {
         d.sessionStorage.remove(a.storageKey)
-      }), d(c).on("resize", this.resize)
+      }), d(c).off("resize").on("resize", this.resize)
     },
     ifameTabs: function (t) {
       var r = this;
@@ -139,15 +142,18 @@
     tabSize: function () {
       var t, e = d(".con-tabs"),
         i = e.find("li").size();
-      t = this.tabWidth * i, e.css("width", t)
+      t = this.tabWidth * i, e.css("width", t), console.log(t)
     },
     tabEvent: function (t, e) {
       var i = d(".con-tabs").width(),
-        a = this.view,
+        lo = d('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base',
+        a = lo == 'topbar' ? this.view + 220 : this.view,
+        // a = this.view,
         n = this.tabWidth;
       i > this.view ? (this.tabPosition(t, n, "left", a, i, e), this.btnView("visible")) : this.btnView("hide"), (this.currentView < a || this.currentContent > i) && this.tabPosition(t, n, "right", a, i, e), this.currentView = a, this.currentContent = i
     },
     tabPosition: function (t, e, i, a, n, s) {
+      // console.log('con-tabs: ', t, ' tabWidth: ', e, ' direc: ', i, ' contabs-scroll width: ', a, ' con-tabs width: ', n, ' media: ', s)
       var r, c = this,
         l = t.position().left;
       if ("left" === i) {

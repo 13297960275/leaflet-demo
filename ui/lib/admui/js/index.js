@@ -11,6 +11,7 @@
         p.site.menu._collapse_all()
       r && (r = JSON.parse(r).val, e = this.themeColor = r.themeColor, p('body[data-theme]').attr('data-theme', lo), a = r.sidebar, t = r.navbar, n = r.menuDisplay, i = r.menuTxtIcon, e && setTimeout(function () {
         console.log('theme ', lo)
+        // console.log(e, t, p.site)
         if (lo == 'base') {
           "primary" !== e ? o.attr("href", "lib/admui/skins/" + e + "/index" + l + ".css") : o.attr("href", "lib/admui/css/index.css")
           p('li.site-menu-item.has-sub').removeClass('dropdown')
@@ -20,7 +21,8 @@
           p('li.site-menu-item.has-sub').addClass('dropdown')
           p('ul.site-menu-sub').addClass('dropdown-menu')
         }
-      }, 130), a && "site-menubar-light" === a && p("#admui-siteMenubar").addClass("site-menubar-light"), t && "" !== t && p(".site-navbar").addClass(t), "" === r.navbarInverse && p(".site-navbar").removeClass("navbar-inverse"), n && "site-menubar-fold" === n && (p.site.menubar.fold(), i && "site-menubar-keep" === i ? s.addClass("site-menubar-keep") : s.addClass("site-menubar-fold-alt")), "" === r.tabFlag && s.removeClass("site-contabs-open"))
+        p.site.contentTabs.init()
+      }, 0), a && "site-menubar-light" === a && p("#admui-siteMenubar").addClass("site-menubar-light"), t && "" !== t && p(".site-navbar").addClass(t), "" === r.navbarInverse && p(".site-navbar").removeClass("navbar-inverse"), n && "site-menubar-fold" === n && (p.site.menubar.fold(), i && "site-menubar-keep" === i ? s.addClass("site-menubar-keep") : s.addClass("site-menubar-fold-alt")), "" === r.tabFlag && s.removeClass("site-contabs-open"))
     },
     iframeTheme: function () {
       var e = p("#admui-siteStyle", this.iframeDocument),
