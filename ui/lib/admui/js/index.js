@@ -8,6 +8,7 @@
         r = localStorage.getItem("admui.base.skinTools"),
         l = -1 === o.prop("href").indexOf("?v=") ? "" : ".min";
         lo && localStorage.setItem('layout', lo), p('.change-layout.active').removeClass('active'), p('.change-layout[data-layout="' + lo + '"]').addClass('active')
+        p.site.menu._collapse_all()
       r && (r = JSON.parse(r).val, e = this.themeColor = r.themeColor, p('body[data-theme]').attr('data-theme', lo), a = r.sidebar, t = r.navbar, n = r.menuDisplay, i = r.menuTxtIcon, e && setTimeout(function () {
         console.log('theme ', lo)
         if (lo == 'base') {

@@ -9,6 +9,7 @@
     _bind: function () {
       var i = this,
         s = o("body"),
+        lo = o('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base',
         n = this.$siteMenubar;
       n.on("mouseenter.site.menu", ".site-menu-item", function (e) {
         if (o('.change-layout.active').attr('data-layout') == 'topbar') {
@@ -53,7 +54,6 @@
       //   o.site.menu._collapse_all()
       // })
 
-      var lo = o('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base'
       lo == 'topbar' && setTimeout(function () {
         o.site.menu._collapse_all()
       }, 200);
