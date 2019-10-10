@@ -18,10 +18,7 @@
         a.tabPosition(n, a.tabWidth, "right")
       }).off("click.site.contabs", ".pull-right>.btn-icon").on("click.site.contabs", ".pull-right>.btn-icon", function () {
         var t = n.width();
-        var lo = d('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base';
-        console.log(lo)
-        a.tabPosition(n, a.tabWidth, "left", a.view, lo == 'topbar' ? t - 300 : t)
-        // a.tabPosition(n, a.tabWidth, "left", a.view, t)
+        a.tabPosition(n, a.tabWidth, "left", a.view, t)
       }).off("click.site.contabs", "ul.con-tabs>li").on("click.site.contabs", "ul.con-tabs>li", function (t) {
         var e = d(t.target),
           i = d(this);
@@ -142,13 +139,11 @@
     tabSize: function () {
       var t, e = d(".con-tabs"),
         i = e.find("li").size();
-      t = this.tabWidth * i, e.css("width", t), console.log(t)
+      t = this.tabWidth * i, e.css("width", t)
     },
     tabEvent: function (t, e) {
       var i = d(".con-tabs").width(),
-        lo = d('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base',
-        a = lo == 'topbar' ? this.view + 220 : this.view,
-        // a = this.view,
+        a = this.view,
         n = this.tabWidth;
       i > this.view ? (this.tabPosition(t, n, "left", a, i, e), this.btnView("visible")) : this.btnView("hide"), (this.currentView < a || this.currentContent > i) && this.tabPosition(t, n, "right", a, i, e), this.currentView = a, this.currentContent = i
     },

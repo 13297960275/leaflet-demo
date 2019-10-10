@@ -11,45 +11,44 @@
         s = o("body"),
         lo = o('.change-layout.active').attr('data-layout') || localStorage.getItem('layout') || 'base',
         n = this.$siteMenubar;
-      n.on("mouseenter.site.menu", ".site-menu-item", function (e) {
+      n.off("mouseenter.site.menu", ".site-menu-item").on("mouseenter.site.menu", ".site-menu-item", function (e) {
         if (o('.change-layout.active').attr('data-layout') == 'topbar') {
           return;
         }
         var e = o(this);
         !0 === s.hasClass("site-menubar-fold") && e.is(".has-sub") && e.parent(".site-menu").length && i.position(e, e.children(".site-menu-sub")), e.addClass("hover")
-      }).on("mouseleave.site.menu", ".site-menu-item", function (e) {
+      }).off("mouseleave.site.menu", ".site-menu-item").on("mouseleave.site.menu", ".site-menu-item", function (e) {
         if (o('.change-layout.active').attr('data-layout') == 'topbar') {
           return;
         }
         var e = o(this);
         !0 === s.hasClass("site-menubar-fold") && e.is(".has-sub") && e.parent(".site-menu").length && e.children(".site-menu-sub").css("max-height", ""), e.removeClass("hover")
-      }).on("deactive.site.menu", ".site-menu-item.active", function () {
+      }).off("deactive.site.menu", ".site-menu-item.active").on("deactive.site.menu", ".site-menu-item.active", function () {
         o(this).removeClass("active")
-      }).on("active.site.menu", ".site-menu-item", function () {
+      }).off("active.site.menu", ".site-menu-item").on("active.site.menu", ".site-menu-item", function () {
         o(this).addClass("active")
-      }).on("open.site.menu", ".site-menu-item", function (e) {
+      }).off("open.site.menu", ".site-menu-item").on("open.site.menu", ".site-menu-item", function (e) {
         var s = o(this);
         i._expand(s, function () {
           s.addClass("open")
         }), i.accordion && s.closest("li.has-sub").length <= 1 && s.siblings(".open").trigger("close.site.menu"), e.stopPropagation()
-      }).on("close.site.menu", ".site-menu-item.open", function (e) {
+      }).off("close.site.menu", ".site-menu-item.open").on("close.site.menu", ".site-menu-item.open", function (e) {
         var s = o(this);
         i._collapse(s, function () {
           s.removeClass("open")
         }), e.stopPropagation()
-      }).on("click.site.menu ", ".site-menu-item > a", function (ev) {
+      }).off("click.site.menu ", ".site-menu-item > a").on("click.site.menu ", ".site-menu-item > a", function (ev) {
         var e = o(this),
           s = e.parent();
         s.is(".has-sub") ? s.is(".open") ? s.trigger("close.site.menu") : s.trigger("open.site.menu") : (e.closest("li").siblings(".open").trigger("close.site.menu"), e.closest("li.has-sub").siblings(".open").trigger("close.site.menu"), e.parents("div.tab-pane").siblings().find("li.open").trigger("close.site.menu"), n.find("li.active").trigger("deactive.site.menu"), s.trigger("active.site.menu"))
-      }).on("touchend.site.menu", "> .site-menu-item > a", function (ev) {
+      }).off("touchend.site.menu", "> .site-menu-item > a").on("touchend.site.menu", "> .site-menu-item > a", function (ev) {
         var e = o(this).parent(".site-menu-item");
         s.hasClass("site-menubar-fold") && e.is(".has-sub") && e.parent(".site-menu").length && (e.siblings(".hover").removeClass("hover"), e.is(".hover") ? e.removeClass("hover") : e.addClass("hover"))
-      }).on("scroll.site.menu", ".site-menu-sub", function (e) {
+      }).off("scroll.site.menu", ".site-menu-sub").on("scroll.site.menu", ".site-menu-sub", function (e) {
         e.stopPropagation()
       })
 
-      o(document.body).on("click", function (t) {
-        // console.log(t.target)
+      o(document.body).off("click").on("click", function (t) {
         var tg = t.target,
           p = o(tg).parents('.site-menu-item');
         !p.length && lo == 'topbar' && o.site.menu._collapse_all()
