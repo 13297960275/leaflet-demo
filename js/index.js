@@ -70,8 +70,12 @@ function activateFunByMenu(fun) {
 $('.config-box').on('click', function (ev) {
   $('.config-control').hasClass('config-control-show') ? $('.config-control').removeClass('config-control-show') : $('.config-control').addClass('config-control-show')
 })
+$('.config-control .layui-layer-setwin').on('click', function (ev) {
+  $('.config-control').removeClass('config-control-show')
+})
 $('input[type="radio"][name="configFlag"]').on('click', function (ev) {
   initMap()
+  $('.config-control').removeClass('config-control-show')
 })
 $(document).ready(function () {
   window.parent && window.parent.setStyleByTheme && (haoutil.storage.add("theme", "blue"),
