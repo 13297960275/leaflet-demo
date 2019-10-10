@@ -482,7 +482,7 @@
     ]
   },
   "widget": {
-    "debugger": false,
+    "debugger": true,
     "version": "20190112",
     "defaultOptions": {
       "windowOptions": {

@@ -8,8 +8,7 @@
     "minZoom": 3,
     "maxZoom": 18,
     "centerAutoLevel": 15,
-    "controls": [
-      {
+    "controls": [{
         "type": "scale"
       },
       {
@@ -31,8 +30,7 @@
         "visible": false
       }
     ],
-    "basemaps": [
-      {
+    "basemaps": [{
         "id": 10,
         "name": "地图底图",
         "type": "group"
@@ -122,8 +120,7 @@
         "icon": "baiduimage.png"
       }
     ],
-    "operationallayers": [
-      {
+    "operationallayers": [{
         "id": 20,
         "name": "辅助图层",
         "type": "group"
@@ -285,8 +282,7 @@
         "name": "服务区",
         "type": "arcgis_feature",
         "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/16",
-        "columns": [
-          {
+        "columns": [{
             "field": "NAME",
             "name": "名称"
           },
@@ -467,8 +463,7 @@
             "popupAnchor": [0, -44]
           }
         },
-        "popup": [
-          {
+        "popup": [{
             "field": "项目名称",
             "name": "项目名称"
           },
@@ -586,12 +581,10 @@
       "autoDisable": true,
       "disableOhter": true
     },
-    "widgetsAtStart": [
-      {
+    "widgetsAtStart": [{
         "name": "右上角工具栏",
         "uri": "widgets/toolBar/widget.js",
-        "data": [
-          {
+        "data": [{
             "name": "漫游",
             "icon": "fa fa-globe",
             "onclick": "L.widget.disableAll()",
@@ -686,12 +679,10 @@
         "uri": "widgets/queryGaodeRoute/widget.js"
       }
     ],
-    "widgets": [
-      {
+    "widgets": [{
         "name": "模板",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "name": "iframe弹窗模板",
             "uri": "widgets/_example/widget.js",
             "windowOptions": {
@@ -719,8 +710,7 @@
       {
         "name": "插件",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "name": "iframe弹窗模板",
             "uri": "widgets/_example/widget.js",
             "windowOptions": {
@@ -748,8 +738,7 @@
       {
         "name": "工具",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "id": "manageBasemaps",
             "name": "地图切换",
             "uri": "widgets/manageBasemaps/widget.js",
@@ -840,8 +829,7 @@
       {
         "name": "Echarts",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "name": "饼形图标记",
             "uri": "widgetsTS/showEcharts/marker1.js"
           },
@@ -902,8 +890,7 @@
       {
         "name": "MapV",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "name": "蜂巢图",
             "uri": "widgetsTS/showMapV/gridHoneycomb.js"
           },
@@ -952,8 +939,7 @@
       {
         "name": "ts态势",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "name": "全省情况",
             "uri": "widgetsTS/ts_showQyInfoSheng/widget.js"
           },
@@ -1018,8 +1004,7 @@
       {
         "name": "常用功能",
         "type": "group",
-        "children": [
-          {
+        "children": [{
             "name": "要素编辑",
             "uri": "widgetsTS/editFeature/widget.js",
             "layers": [{

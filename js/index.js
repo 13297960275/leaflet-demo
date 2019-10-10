@@ -2,7 +2,11 @@ var map;
 
 function initMap() {
   var r = haoutil.system.getRequest(),
-    a = "config/config.json";
+    a = "config/" + jQuery('input[type="radio"][name="configFlag"]:checked').val() + ".json";
+  map && map.off() && map.remove();
+  $('#centerDiv').children('.toolBar').remove();
+  $('#centerDiv').siblings('#widget-testbar').remove();
+  $('#centerDiv').siblings('#map-querybar').remove();
   r.config && (a = r.config), haoutil.loading.show(), L.src.createMap({
     id: "map",
     url: a + "",
@@ -63,6 +67,13 @@ function activateWidget(a) {
 function activateFunByMenu(fun) {
   eval(fun)
 }
+$('.config-box').on('click', function (ev) {
+  $('.config-control').hasClass('config-control-show') ? $('.config-control').removeClass('config-control-show') : $('.config-control').addClass('config-control-show')
+})
+$('input[type="radio"][name="configFlag"]').on('click', function (ev) {
+  initMap()
+})
 $(document).ready(function () {
-  window.parent && window.parent.setStyleByTheme && (haoutil.storage.add("theme", "blue"), window.parent.setStyleByTheme()), initMap()
+  window.parent && window.parent.setStyleByTheme && (haoutil.storage.add("theme", "blue"),
+    window.parent.setStyleByTheme()), initMap()
 });

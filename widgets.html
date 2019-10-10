@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="">
-  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-iconfig-precomposed" href="img/favicon/apple-touch-icon.png">
   <meta name="msapplication-TileImage" content="img/favicon/app-icon72x72@2x.png">
   <meta name="msapplication-TileColor" content="#62a8ea">
   <script src="lib/include-lib.js" libpath="lib/"
@@ -28,8 +28,41 @@
   <div id="centerDiv">
     <div id="map" class="map"></div>
   </div>
-  <div onclick='L.widget.activate("manageBasemaps",!0)'
-    style="position:absolute;left:5px;bottom:25px;width:36px;height:36px;padding:5px;background-color:rgba(0,0,0,.3);z-index:9999">
+  <div class="config-box" title="配置切换">
+    <i class="fa fa-tasks"></i>
+  </div>
+  <div class="config-control">
+    <div class="layui-layer-title" style="cursor: move;">配置切换</div>
+    <div class="layui-layer-content">
+      <div>
+        <input type="radio" checked name="configFlag" value="config" id="config">
+        <label for="config">标准地图</label>
+      </div>
+      <div>
+        <input type="radio" name="configFlag" value="config1" id="config1">
+        <label for="config1">标准地图1</label>
+      </div>
+      <div>
+        <input type="radio" name="configFlag" value="baidu" id="baidu">
+        <label for="baidu">百度地图</label>
+      </div>
+      <div>
+        <input type="radio" name="configFlag" value="baidu1" id="baidu1">
+        <label for="baidu1">百度地图1</label>
+      </div>
+      <div>
+        <input type="radio" name="configFlag" value="gcj" id="gcj">
+        <label for="gcj">高德地图</label>
+      </div>
+      <div>
+        <input type="radio" name="configFlag" value="gcj1" id="gcj1">
+        <label for="gcj1">高德地图1</label>
+      </div>
+    </div>
+    <span class="layui-layer-setwin"><a class="layui-layer-ico layui-layer-close layui-layer-close1"
+        href="javascript:;"></a></span>
+  </div>
+  <div onclick='L.widget.activate("manageBasemaps",!0)' class="layer-box">
     <img src="lib/leaflet-src/images/layers.png"></div>
   <script src="js/index.js"></script>
 </body>
