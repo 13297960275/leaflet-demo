@@ -11,8 +11,9 @@
     }
 
     var Skintools = {
-        storageKey: 'admui.base.skinTools',
-        path: $.ctx + 'lib/admui/',
+        storageKey: 'skinTools',
+        storageLayoutKey: 'layout',
+        path: $.ctx + 'lib/admui/css/',
         $siteSidebar: $.parentFrame.find('.site-menubar'),
         $siteNavbar: $.parentFrame.find('.site-navbar'),
         $layoutBox: $.parentFrame.find('.change-layout'),
@@ -24,13 +25,10 @@
             themeColor: 'primary',
             menuDisplay: 'site-menubar-unfold',
             menuTxtIcon: 'site-menubar-keep',
-            tabFlag: 'site-contabs-open',
-            layout: localStorage.getItem('layout')
+            tabFlag: 'site-contabs-open'
         },
         init: function () {
             var self = this;
-            console.log(self, $.site)
-            console.log(localStorage.getItem('admui.base.skinTools'))
             $.site.theme()
 
             $(document).on('change', '#skintoolsSidebar', function () { // 菜单主题
@@ -114,12 +112,11 @@
                 $.storage.set(this.storageKey, this.settings);
             }
 
+            $('input[value="' + localStorage.getItem(this.storageLayoutKey) + '"]', $("#layoutTools>div")).prop('checked', true);
+
             if (this.settings && $.isPlainObject(this.settings)) {
                 $.each(this.settings, function (n, v) {
                     switch (n) {
-                        case 'layout':
-                            $('input[value="' + v + '"]', $("#layoutTools>div")).prop('checked', true);
-                            break;
                         case 'sidebar':
                             $('#skintoolsSidebar').selectpicker('val', [v]);
                             break;
@@ -166,7 +163,6 @@
             var val = $item.val(),
                 checked = $item.prop('checked');
             // console.log(val, checked)
-            this.updateSetting('layout', val);
             this.layoutImprove(val);
         },
         navbarEvents: function ($item) {
@@ -196,8 +192,10 @@
             }
         },
         layoutImprove: function (val) {
-            console.log(jQuery)
-            // this.$siteNavbar.removeClass(this.navbarSkins).addClass(val);
+            localStorage.setItem(this.storageLayoutKey, val);
+            $.parentFrame.find('.change-layout.active').removeClass('active')
+            $.parentFrame.find('.change-layout[data-layout="' + val + '"]').addClass('active')
+            $.site.theme()
         },
         navbarImprove: function (val, checked) {
             if (val === 'navbar-inverse') {
@@ -210,28 +208,22 @@
             var self = this,
                 $parentLink = $('#admui-siteStyle', $.parentFrame),
                 $iframes = $.parentFrame.find('#admui-pageContent>iframe'),
-                parentHref,
-                parentEtx = $parentLink.prop('href').indexOf('?v=') === -1 ? '' : '.min';
+                parentHref
 
-            if (val === 'primary') {
-                parentHref = this.path + 'css/index' + parentEtx + '.css';
-            } else {
-                parentHref = this.path + 'skins/' + val + '/index' + parentEtx + '.css';
-            }
+            parentHref = self.path + localStorage.getItem(self.storageLayoutKey) + '/index.css';
 
             $parentLink.attr('href', parentHref);
 
             $iframes.each(function () {
                 var thisName = $(this).attr('name'),
                     $that = $('#admui-siteStyle', parent.frames[thisName].document),
-                    iframeEtx, iframeHref;
+                    iframeHref;
 
                 if ($that.length) {
-                    iframeEtx = $that.prop('href').indexOf('?v=') === -1 ? '' : '.min';
                     if (val === 'primary') {
-                        iframeHref = self.path + 'css/site' + iframeEtx + '.css';
+                        iframeHref = self.path + localStorage.getItem(self.storageLayoutKey) + '/site.css';
                     } else {
-                        iframeHref = self.path + 'skins/' + val + '/site' + iframeEtx + '.css';
+                        iframeHref = self.path + '/skins/' + val + '/site.css';
                     }
 
                     $that.attr('href', iframeHref);
