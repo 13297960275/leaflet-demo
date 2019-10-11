@@ -11,7 +11,7 @@ L.widget.bindClass(L.widget.BaseWidget.extend({
   },
   queryServer: function () {
     var e = L.esri.query({
-        url: "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/33"
+        url: "http://data.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/33"
       }),
       a = this;
     e.run(function (e, t, r) {

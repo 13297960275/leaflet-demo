@@ -115,7 +115,7 @@
         "pid": 3030,
         "name": "各省市",
         "type": "geojson",
-        "url": "./config/china.json",
+        "url": "data/geojson/china.json",
         "symbol": {
           "styleOptions": {
             "color": "#0000ff",
@@ -320,7 +320,7 @@
         "pid": 3020,
         "name": "建筑物",
         "type": "wfs",
-        "url": "http://api.marsgis.cn/geoserver/mars/ows",
+        "url": "http://data.marsgis.cn/geoserver/mars/ows",
         "typeNS": "mars",
         "typeName": "hfjzw",
         "minZoom": 15,
@@ -340,7 +340,7 @@
         "pid": 3020,
         "name": "合肥区县界线",
         "type": "wfs",
-        "url": "http://api.marsgis.cn/geoserver/mars/ows",
+        "url": "http://data.marsgis.cn/geoserver/mars/ows",
         "typeNS": "mars",
         "typeName": "hfbj",
         "geometryField": "the_geom",
@@ -358,7 +358,7 @@
         "pid": 3020,
         "name": "体育设施点",
         "type": "wfs",
-        "url": "http://api.marsgis.cn/geoserver/mars/ows",
+        "url": "http://data.marsgis.cn/geoserver/mars/ows",
         "typeNS": "mars",
         "typeName": "hfty",
         "geometryField": "the_geom",
@@ -483,7 +483,7 @@
   },
   "widget": {
     "debugger": true,
-    "version": "20190112",
+    "version": "",
     "defaultOptions": {
       "windowOptions": {
         "skin": "animation-fade",

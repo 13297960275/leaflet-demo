@@ -542,7 +542,7 @@
     },
     "widget": {
         "debugger": true,
-        "version": "20190603",
+        "version": "",
         "defaultOptions": {
             "windowOptions": {
                 "skin": "animation-fade",
