@@ -8,6 +8,7 @@
         "minZoom": 3,
         "maxZoom": 18,
         "centerAutoLevel": 15,
+        "copyright": false,
         "controls": [{
                 "type": "scale"
             },
@@ -234,7 +235,7 @@
                 "pid": 3010,
                 "name": "加油站",
                 "type": "arcgis_feature",
-                "url": "http://arc.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/10",
+                "url": "http://data.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/10",
                 "popup": "<p>名称:{NAME}<br>地址:{address}</p>",
                 "symbol": {
                     "draggable": true,
@@ -251,7 +252,7 @@
                 "pid": 3010,
                 "name": "服务区",
                 "type": "arcgis_feature",
-                "url": "http://arc.marsgis.rcgis/rest/services/mars/hefei/MapServer/16",
+                "url": "http://data.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/16",
                 "columns": [{
                         "field": "NAME",
                         "name": "名称"
@@ -290,10 +291,10 @@
                 "pid": 3010,
                 "name": "收费站",
                 "type": "arcgis_feature",
-                "url": "http://arc.marsgis.rcgis/rest/services/mars/hefei/MapServer/15",
+                "url": "http://data.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/15",
                 "popup": {
                     "type": "iframe",
-                    "url": "http://www.marsgis.id={FID}&name={NAME}",
+                    "url": "http://www.marsgis.cn/?id={FID}&name={NAME}",
                     "width": 600,
                     "height": 400
                 },
@@ -330,7 +331,7 @@
                 "pid": 3010,
                 "name": "铁路",
                 "type": "arcgis_feature",
-                "url": "http://arc.marsgis.rcgis/rest/services/mars/hefei/MapServer/33",
+                "url": "http://data.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/33",
                 "popup": "名称:{NAME}<br>地址:{address}",
                 "symbol": {
                     "styleOptions": {
@@ -346,7 +347,7 @@
                 "pid": 3010,
                 "name": "乡镇",
                 "type": "arcgis_feature",
-                "url": "http://arc.marsgis.rcgis/rest/services/mars/hefei/MapServer/39",
+                "url": "http://data.marsgis.cn/arcgis/rest/services/mars/hefei/MapServer/39",
                 "simplifyFactor": 0.35,
                 "precision": 5,
                 "popup": "all",

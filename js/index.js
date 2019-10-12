@@ -8,7 +8,7 @@ function initMap() {
   $('#centerDiv').siblings('#widget-testbar').remove();
   $('#centerDiv').siblings('#map-querybar').remove();
   $('#centerDiv').siblings('.layui-layer.layui-layer-iframe.layui-layer-border.animation-fade').remove();
-  console.log('当前加载文件：', a)
+  console.log('当前加载配置文件类型：', jQuery('input[type="radio"][name="configFlag"]:checked').siblings('label').text())
   r.config && (a = r.config), haoutil.loading.show(), L.src.createMap({
     id: "map",
     url: a + "",
