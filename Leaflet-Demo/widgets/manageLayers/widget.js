@@ -116,6 +116,7 @@ var manageLayersWidget = L.widget.bindClass(L.widget.BaseWidget.extend({
     return e instanceof L.LayerGroup || e instanceof L.FeatureGroup ? e.getLayers() : null
   },
   updateLayerVisible: function (e, a, t) {
+    console.log(e, a, t)
     if (a && this.centerAt(e), e && e.setVisible) e.setVisible(a);
     else {
       var i = this;
