@@ -126,7 +126,6 @@ var manageLayersWidget = L.widget.bindClass(L.widget.BaseWidget.extend({
     }
   },
   udpateLayerOpacity: function (e, a) {
-    debugger;
     console.log(e, a)
     var t = this;
     e instanceof L.LayerGroup || e instanceof L.FeatureGroup ? e.eachLayer(function (e) {
