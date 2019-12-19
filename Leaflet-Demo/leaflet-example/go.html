@@ -47,7 +47,7 @@
     };
     $(".main-header").load("./header.html")
   </script>
-  <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
+  <!-- <div class="page-header" style="padding-bottom: 0px; margin-bottom: 0px;">
       <ol class="breadcrumb" style="padding-bottom: 0px; margin-bottom: 0px;">
           <li>
               <a href="./index.html">功能示例</a>
@@ -55,9 +55,9 @@
           <li class="active" id="active-page"></li>
       </ol>
   </div>
-  <div class="page-content container-fluid">
+  <div class="page-content container-fluid"> -->
     <iframe id="myiframe" name="myiframe" src="" scrolling="auto" frameborder="0" onload="window.changeFrameHeight&&changeFrameHeight()" style="width:100%"></iframe>
-  </div>
+  <!-- </div> -->
   <script>
     function changeFrameHeight() {
       document.getElementById("myiframe").height = document.documentElement.clientHeight - 60
@@ -116,7 +116,7 @@
         break;
     }
     
-    document.getElementById("active-page").innerHTML = text
+    // document.getElementById("active-page").innerHTML = text
     document.getElementById("myiframe").src = url + ""
   </script>
 </body>
